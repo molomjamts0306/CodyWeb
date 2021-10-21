@@ -7,6 +7,7 @@ import FeatureItem from "../../components/FeaturesItem";
 import {A11y, Navigation, Scrollbar} from "swiper";
 import Icons from "../../components/Icons";
 import webIcon from "../../components/webIcon";
+import galleryActive from "../../images/galleryActive.svg";
 const ContainerStyle = styled.div`
   .industries-container{
     margin-top: 100px;
@@ -102,7 +103,7 @@ const ContainerStyle = styled.div`
     margin: 0 0 10px;
     background-color: white;
 
-    :hover{
+    &:hover, &.active{
       color: rgb(136, 85, 241);
       transition-duration: 0.5s;
     }
@@ -165,7 +166,10 @@ const web = [
     { id: 15,  icon: webIcon.tavilga },
     { id: 16,  icon: webIcon.kids },
     { id: 17,  icon: webIcon.cose },
+];
 
+const webActive = [
+    {id:1, icon: webIcon.galleryActive}
 ];
 function Industries() {
     const [index, setIndex] = React.useState(0);
@@ -182,7 +186,7 @@ function Industries() {
                             <ul className="industry-menus">
                                 {industries.map((item,i) => {
                                     return (
-                                        <button className="item-wrapper" onClick={swiper && swiper.slideTo(index + 1)}>
+                                        <button className={`item-wrapper ${index === i ? 'active' : ''}`} onClick={() => swiper ? swiper.slideTo(i) : false}>
                                             <img className="indust-icon" src={item.icon} alt=""/>
                                             <span className="indust-title">{item.title}</span>
                                         </button>
@@ -198,7 +202,7 @@ function Industries() {
                                     spaceBetween={100}
                                     navigation={true}
                                     // pagination={{ clickable: true }}
-                                    // onSlideChange={(e) => setIndex(e.realIndex)}
+                                    onSlideChange={(e) => setIndex(e.realIndex)}
                                     onSwiper={setSwiper}
                                     autoplay={{ delay: 5000 ,disableOnInteraction: false }}
                                     >

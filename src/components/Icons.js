@@ -1,4 +1,5 @@
 import gallery from '../images/gallery.svg'
+import galleryActive from '../images/galleryActive.svg'
 import coupon from '../images/cupon.svg'
 import gift from '../images/gallery.svg'
 import lightning from '../images/gallery.svg'
@@ -42,9 +43,10 @@ import furniture from '../images/industryIcon/tavilga.svg'
 import child from '../images/industryIcon/huuhed.svg'
 import goo from '../images/industryIcon/gooSaihan.svg'
 
-
+console.log(goo)
 const Icons={
     gallery,
+    galleryActive,
     coupon,
     gift,
     lightning,

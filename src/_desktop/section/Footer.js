@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import facebookIcon from '../../images/facebook.svg'
 import {Container} from 'reactstrap';
+import * as url from "url";
 const ContainerStyle = styled.div`
   .footer-container{
   margin-top: 100px;
@@ -269,147 +270,147 @@ function Footer() {
                         <div className="container-bottom">
                             <div className="bottom-menu-row">
                                 <div className="footer-lists">
-                                    <a>Airlink</a>
+                                    <a rel="noopener noreferrer" href="http://airlink.mn" target="_blank">Airlink</a>
                                     <p>Нислэгийн билет</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>24auto</a>
+                                    <a rel="noopener noreferrer" href="http://24auto.mn" target="_blank">24auto</a>
                                     <p>авто сэлбэг</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Comf</a>
+                                    <a rel="noopener noreferrer" href="http://comf.mn" target="_blank">Comf</a>
                                     <p>хүүхдийн тавилга</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Haus</a>
+                                    <a rel="noopener noreferrer" href="http://haus.mn" target="_blank">Haus</a>
                                     <p>барилгын материал</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Amway</a>
+                                    <a rel="noopener noreferrer" href="http://amway.mn" target="_blank">Amway</a>
                                     <p>гэр ахуй</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Zanadu</a>
+                                    <a rel="noopener noreferrer" href="http://zanadu.mn" target="_blank">Zanadu</a>
                                     <p>дарс</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>shoppyLux</a>
+                                    <a rel="noopener noreferrer" href="http://shoppylux.mn" target="_blank">shoppyLux</a>
                                     <p>the luxury you deserve</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Micheal&Amazonka</a>
+                                    <a rel="noopener noreferrer" href="http://michealamazonka.mn" target="_blank">Micheal&Amazonka</a>
                                     <p>Фейшн</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>UB passport</a>
+                                    <a rel="noopener noreferrer" href="http://ubp.mn" target="_blank">UB passport</a>
                                     <p>Лайфстайл</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Mild cosmetics</a>
+                                    <a rel="noopener noreferrer" href="http://mildcosmetics.mn" target="_blank">Mild cosmetics</a>
                                     <p>гоо сайхан</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Metro express</a>
+                                    <a rel="noopener noreferrer" href="http://metroexpress.mn" target="_blank">Metro express</a>
                                     <p>гэр ахуй</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Аянчин</a>
+                                    <a rel="noopener noreferrer" href="http://aynchin.mn" target="_blank">Аянчин</a>
                                     <p>аяны хэрэгсэл хувцас</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Cose</a>
+                                    <a rel="noopener noreferrer" href="http://cose.mn" target="_blank">Cose</a>
                                     <p>арьс арчилгаа</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>JoinMe</a>
+                                    <a rel="noopener noreferrer" href="http://joinme.mn" target="_blank">JoinMe</a>
                                     <p>аялал</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Таван нүдэн</a>
+                                    <a rel="noopener noreferrer" href="tavannuden.mn" target="_blank">Таван нүдэн</a>
                                     <p>үнэт эдлэл</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Carter's</a>
+                                    <a rel="noopener noreferrer" href="http://carters.mn" target="_blank">Carter's</a>
                                     <p>хүүхдийн хувцас</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Smart store</a>
+                                    <a rel="noopener noreferrer" href="http://smartstore.mn" target="_blank">Smart store</a>
                                     <p>электроникс</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Цэцэгт мэндчилгээ</a>
+                                    <a rel="noopener noreferrer" href="http://tsetseg.mn" target="_blank">Цэцэгт мэндчилгээ</a>
                                     <p>бэлэг дурсгал</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Wellbee</a>
+                                    <a rel="noopener noreferrer" href="http://wellbee" target="_blank">Wellbee</a>
                                     <p>арчилгаа</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Ger place</a>
+                                    <a rel="noopener noreferrer" href="http://gerplace.mn" target="_blank">Ger place</a>
                                     <p>тавилга</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Baby world</a>
+                                    <a rel="noopener noreferrer" href="http://babyworld.mn" target="_blank">Baby world</a>
                                     <p>хүүхдийн</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Gobi khangai</a>
+                                    <a rel="noopener noreferrer" href="http://govikhangai.mn" target="_blank">Gobi khangai</a>
                                     <p>тавилга</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Home shopping</a>
+                                    <a rel="noopener noreferrer" href="http://homeshopping.mn" target="_blank">Home shopping</a>
                                     <p>гэр ахуй</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Khur</a>
+                                    <a rel="noopener noreferrer" href="http://khur.mn" target="_blank">Khur</a>
                                     <p>арьсан эдлэл</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Sarnai</a>
+                                    <a rel="noopener noreferrer" href="http://sarnai.mn" target="_blank">Sarnai</a>
                                     <p>бэлэг дурсгал</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Premium taste</a>
+                                    <a rel="noopener noreferrer" href="http://premiumtaste.mn" target="_blank">Premium taste</a>
                                     <p>коньяк, виски, дарс</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Nature republic</a>
+                                    <a rel="noopener noreferrer" href="http://naturerepublic.mn" target="_blank">Nature republic</a>
                                     <p>арьс арчилгаа</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Shoez</a>
+                                    <a rel="noopener noreferrer" href="http://shoez.mn" target="_blank">Shoez</a>
                                     <p>гутал</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Tanpopo</a>
+                                    <a rel="noopener noreferrer" href="http://tanpopo.mn" target="_blank">Tanpopo</a>
                                     <p>хүүхдийн</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Zanadu</a>
+                                    <a rel="noopener noreferrer" href="http://zanadu.mn" target="_blank">Zanadu</a>
                                     <p>дарс</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Inktop</a>
+                                    <a rel="noopener noreferrer" href="http://inktop.mn" target="_blank">Inktop</a>
                                     <p>бичиг хэрэг</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>itStore</a>
+                                    <a rel="noopener noreferrer" href="http://itstore.mn" target="_blank">itStore</a>
                                     <p>электроникс</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>eSansar</a>
+                                    <a rel="noopener noreferrer" href="http://esansar.mn" target="_blank">eSansar</a>
                                     <p>хүнс</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Baigal</a>
+                                    <a rel="noopener noreferrer" href="http://baigal.mn" target="_blank">Baigal</a>
                                     <p>үнэт эдлэл</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Amar</a>
+                                    <a rel="noopener noreferrer" href="http://amar.mn" target="_blank">Amar</a>
                                     <p>даатгал</p>
                                 </div>
                                 <div className="footer-lists">
-                                    <a>Нэкст электроникс</a>
+                                    <a rel="noopener noreferrer" href="http://next.mn" target="_blank">Нэкст электроникс</a>
                                     <p>цахилгаан бараа</p>
                                 </div>
                             </div>

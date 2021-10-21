@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import {Container, Pagination,} from 'reactstrap';
 import {Swiper, SwiperSlide} from "swiper/react";
 import FeatureItem from "../../components/FeaturesItem";
-
 import {A11y, Navigation, Scrollbar} from "swiper";
 import Icons from "../../components/Icons";
 import webIcon from "../../components/webIcon";
@@ -107,6 +106,9 @@ const ContainerStyle = styled.div`
       color: rgb(136, 85, 241);
       transition-duration: 0.5s;
     }
+    :focus{
+      color: #8855F1;
+    }
   }
   .indust-icon{
     background-color: transparent;
@@ -116,13 +118,12 @@ const ContainerStyle = styled.div`
     //margin: 5px;
     border-radius: 6px;
     margin-right: 20px;
-    :active{
-      background-color: blueviolet;!important;
+    :hover{
+      background-color: #8855F1!important;
     }
     :focus{
-      background-color: blueviolet!important;
+      background-color: #8855F1!important;
     }
-
   }
 
 `;

@@ -119,9 +119,9 @@ const ContainerStyle = styled.div`
     //margin: 5px;
     border-radius: 6px;
     margin-right: 20px;
-    //&:hover{
-    //  background-color: #8855F1!important;
-    //}
+    &:hover ,&.active{
+      background-color: #8855F1!important;
+    }
     &:focus{
       background-color: #8855F1!important;
     }
@@ -130,23 +130,23 @@ const ContainerStyle = styled.div`
 `;
 
 const industries = [
-    { id: 1, title: 'Технологи', icon: Icons.tech },
-    { id: 2, title: 'Хувцас, загвар', icon: Icons.cloth },
-    { id: 3, title: 'Гэр ахуй', icon: Icons.homeshop },
-    { id: 4, title: 'Дуу, хөгжим', icon: Icons.song },
-    { id: 5, title: 'Брэндинг', icon: Icons.brend },
-    { id: 6, title: 'Цахим хэтэвч', icon: Icons.finance },
-    { id: 7, title: 'Аялал, жуулчлал', icon: Icons.travel },
-    { id: 8, title: 'Эвэнт, тасалбар', icon: Icons.ticket },
-    { id: 9, title: 'Медиа', icon: Icons.media },
-    { id: 10, title: 'Эмийн сан', icon: Icons.pharm },
-    { id: 11, title: 'Хүнсний дэлгүүр', icon: Icons.market },
-    { id: 12, title: 'Купон & Ваучер', icon: Icons.vaycher },
-    { id: 13, title: 'Үнэт эдлэл', icon: Icons.diamond },
-    { id: 14, title: 'Нислэг', icon: Icons.flight },
-    { id: 15, title: 'Тавилга', icon: Icons.furniture },
-    { id: 16, title: 'Хүүхэд', icon: Icons.child },
-    { id: 17, title: 'Гоо, сайхан', icon: Icons.goo },
+    { id: 1, title: 'Технологи', icon: Icons.tech, iconActive: Icons.techActive },
+    { id: 2, title: 'Хувцас, загвар', icon: Icons.cloth, iconActive: Icons.clothActive },
+    { id: 3, title: 'Гэр ахуй', icon: Icons.homeshop, iconActive: Icons.homeshopActive },
+    { id: 4, title: 'Дуу, хөгжим', icon: Icons.song, iconActive: Icons.songActive },
+    { id: 5, title: 'Брэндинг', icon: Icons.brend, iconActive: Icons.brendActive },
+    { id: 6, title: 'Цахим хэтэвч', icon: Icons.finance, iconActive: Icons.financeActive },
+    { id: 7, title: 'Аялал, жуулчлал', icon: Icons.travel, iconActive: Icons.travelActive },
+    { id: 8, title: 'Эвэнт, тасалбар', icon: Icons.ticket, iconActive: Icons.ticketActive },
+    { id: 9, title: 'Медиа', icon: Icons.media, iconActive: Icons.mediaActive },
+    { id: 10, title: 'Эмийн сан', icon: Icons.pharm, iconActive: Icons.pharmActive },
+    { id: 11, title: 'Хүнсний дэлгүүр', icon: Icons.market, iconActive: Icons.marketActive },
+    { id: 12, title: 'Купон & Ваучер', icon: Icons.vaycher, iconActive: Icons.vaycherActive },
+    { id: 13, title: 'Үнэт эдлэл', icon: Icons.diamond, iconActive: Icons.diamondActive },
+    { id: 14, title: 'Нислэг', icon: Icons.flight, iconActive: Icons.flightActive },
+    { id: 15, title: 'Тавилга', icon: Icons.furniture, iconActive: Icons.furnitureActive },
+    { id: 16, title: 'Хүүхэд', icon: Icons.child, iconActive: Icons.childActive },
+    { id: 17, title: 'Гоо, сайхан', icon: Icons.goo, iconActive: Icons.gooActive },
 ];
 const web = [
     { id: 1,  icon: webIcon.tech },
@@ -167,26 +167,6 @@ const web = [
     { id: 16,  icon: webIcon.kids },
     { id: 17,  icon: webIcon.cose },
 ];
-
-const industriesActive = [
-    { id: 1, title: 'Технологи', icon: Icons.techActive },
-    { id: 2, title: 'Хувцас, загвар', icon: Icons.clothActive },
-    { id: 3, title: 'Гэр ахуй', icon: Icons.homeshopActive },
-    { id: 4, title: 'Дуу, хөгжим', icon: Icons.songActive },
-    { id: 5, title: 'Брэндинг', icon: Icons.brendActive },
-    { id: 6, title: 'Цахим хэтэвч', icon: Icons.financeActive },
-    { id: 7, title: 'Аялал, жуулчлал', icon: Icons.travelActive },
-    { id: 8, title: 'Эвэнт, тасалбар', icon: Icons.ticketActive },
-    { id: 9, title: 'Медиа', icon: Icons.mediaActive },
-    { id: 10, title: 'Эмийн сан', icon: Icons.pharmActive },
-    { id: 11, title: 'Хүнсний дэлгүүр', icon: Icons.marketActive },
-    { id: 12, title: 'Купон & Ваучер', icon: Icons.vaycherActive },
-    { id: 13, title: 'Үнэт эдлэл', icon: Icons.diamondActive },
-    { id: 14, title: 'Нислэг', icon: Icons.flightActive },
-    { id: 15, title: 'Тавилга', icon: Icons.furnitureActive },
-    { id: 16, title: 'Хүүхэд', icon: Icons.childActive },
-    { id: 17, title: 'Гоо, сайхан', icon: Icons.gooActive },
-    ];
 function Industries() {
     const [index, setIndex] = React.useState(0);
     const [swiper, setSwiper] = React.useState(null);
@@ -203,7 +183,7 @@ function Industries() {
                                 {industries.map((item,i) => {
                                     return (
                                         <button className={`item-wrapper ${index === i ? 'active' : ''}`} onClick={() => swiper ? swiper.slideTo(i) : false}>
-                                            <img className="indust-icon" src={item.icon} alt=""/>
+                                            <img className="indust-icon" src={index === i ? item.iconActive : item.icon} alt=""/>
                                             <span className="indust-title">{item.title}</span>
                                         </button>
                                     )

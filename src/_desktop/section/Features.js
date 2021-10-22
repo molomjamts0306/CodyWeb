@@ -249,8 +249,8 @@ let count1 = 0;
 const FeatureModalContents = () => (
     <FeatureModalContentsWrapper>
         {features.map((item, i) => {
-            if (count1 >= 4 || parseInt(features.length / 7, 10) === i) count1 = 0;
-            count1 += 1;
+            if (count1 >= 4) count1 = 0;
+            count1++;
             return (
                 <SwiperSlide key={item.id}>
                     <FeatureItem item={item} color={colors[count1 - 1]} />

@@ -168,9 +168,25 @@ const web = [
     { id: 17,  icon: webIcon.cose },
 ];
 
-const webActive = [
-    {id:1, icon: webIcon.galleryActive}
-];
+const industriesActive = [
+    { id: 1, title: 'Технологи', icon: Icons.techActive },
+    { id: 2, title: 'Хувцас, загвар', icon: Icons.clothActive },
+    { id: 3, title: 'Гэр ахуй', icon: Icons.homeshopActive },
+    { id: 4, title: 'Дуу, хөгжим', icon: Icons.songActive },
+    { id: 5, title: 'Брэндинг', icon: Icons.brendActive },
+    { id: 6, title: 'Цахим хэтэвч', icon: Icons.financeActive },
+    { id: 7, title: 'Аялал, жуулчлал', icon: Icons.travelActive },
+    { id: 8, title: 'Эвэнт, тасалбар', icon: Icons.ticketActive },
+    { id: 9, title: 'Медиа', icon: Icons.mediaActive },
+    { id: 10, title: 'Эмийн сан', icon: Icons.pharmActive },
+    { id: 11, title: 'Хүнсний дэлгүүр', icon: Icons.marketActive },
+    { id: 12, title: 'Купон & Ваучер', icon: Icons.vaycherActive },
+    { id: 13, title: 'Үнэт эдлэл', icon: Icons.diamondActive },
+    { id: 14, title: 'Нислэг', icon: Icons.flightActive },
+    { id: 15, title: 'Тавилга', icon: Icons.furnitureActive },
+    { id: 16, title: 'Хүүхэд', icon: Icons.childActive },
+    { id: 17, title: 'Гоо, сайхан', icon: Icons.gooActive },
+    ];
 function Industries() {
     const [index, setIndex] = React.useState(0);
     const [swiper, setSwiper] = React.useState(null);

@@ -119,10 +119,10 @@ const ContainerStyle = styled.div`
     //margin: 5px;
     border-radius: 6px;
     margin-right: 20px;
-    :hover{
-      background-color: #8855F1!important;
-    }
-    :focus{
+    //&:hover{
+    //  background-color: #8855F1!important;
+    //}
+    &:focus{
       background-color: #8855F1!important;
     }
   }
@@ -195,7 +195,7 @@ function Industries() {
             <Container>
                 <div  className="industries-container">
                     <div className="industries-title">
-                        <h1>Кодиг ашиглан Та юу бүтээж чадах вэ</h1>
+                        <h1>Кодиг ашиглан Та юу бүтээж чадах вэ?</h1>
                     </div>
                     <div className="industry-section">
                         <div className="industry-button">
@@ -206,7 +206,6 @@ function Industries() {
                                             <img className="indust-icon" src={item.icon} alt=""/>
                                             <span className="indust-title">{item.title}</span>
                                         </button>
-
                                     )
                                 })}
                             </ul>
@@ -220,7 +219,7 @@ function Industries() {
                                     // pagination={{ clickable: true }}
                                     onSlideChange={(e) => setIndex(e.realIndex)}
                                     onSwiper={setSwiper}
-                                    autoplay={{ delay: 5000 ,disableOnInteraction: false }}
+                                    // autoplay={{ delay: 5000 ,disableOnInteraction: false }}
                                     >
                                     {web.map((c, idx)=>(
                                         <SwiperSlide className="industries-item-detail" key={idx}>
@@ -228,8 +227,6 @@ function Industries() {
                                         </SwiperSlide>
                                     ))}
                                     {/*<SwiperSlide><img className="web" src={techno} alt="industry-swiper" /></SwiperSlide>*/}
-
-
                                 </Swiper>
                             </div>
                     </div>

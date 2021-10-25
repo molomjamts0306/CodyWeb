@@ -33,16 +33,16 @@ function Home() {
                 pageId="111468470600452"
                 appId="955395061711308"
             />
-        <ContainerComp>
+                <ContainerComp>
 
-                <Navbar/>
-                <Hero/>
-                <Cody/>
-                <Solution/>
-                <Features/>
-                <Industries/>
-                <Footer/>
-        </ContainerComp>
+                        <Navbar/>
+                        <Hero/>
+                        <Cody/>
+                        <Solution/>
+                        <Features/>
+                        <Industries/>
+                        <Footer/>
+                </ContainerComp>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {Button, Container, Form, Input, Modal, ModalBody, ModalFooter} from 'reactstrap';
+import {Button, Container, Form, Modal, ModalBody, ModalFooter} from 'reactstrap';
 import { Swiper, SwiperSlide} from 'swiper/react';
 import FeatureItem from "../../components/FeaturesItem";
 import SwiperCore, {Autoplay} from "swiper";

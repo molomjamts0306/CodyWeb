@@ -157,7 +157,6 @@ const {
     vista,
     xanadu,
 } = partners;
-
 const images = [
     { url: 'https://ammay.mn/', src: amway, srcGray: partnersGray.amway },
     { url: 'https://babyworld.mn/', src: babyworld, srcGray: partnersGray.babyworld },
@@ -246,35 +245,35 @@ function Hero() {
                             </Swiper>
                         </div>
                     </div>
-<div className="hero-logo-wrapper">
-            <Swiper
-                slidesPerView={12}
-                // autoplay={{ delay: 3000 ,disableOnInteraction: false }}
-                loop={true}
-                loopPreventsSlide={false}
-                spaceBetween={0}
-                breakpoints={{
-                "640": {
-                    "slidesPerView": 4,
-                    "spaceBetween": 0
-                },
-                "768": {
-                    "slidesPerView": 6,
-                    "spaceBetween": 0
-                },
-                "1024": {
-                        "slidesPerView": 8,
+            <div className="hero-logo-wrapper">
+                <Swiper
+                    slidesPerView={12}
+                    // autoplay={{ delay: 3000 ,disableOnInteraction: false }}
+                    loop={true}
+                    loopPreventsSlide={false}
+                    spaceBetween={0}
+                    breakpoints={{
+                    "640": {
+                        "slidesPerView": 4,
                         "spaceBetween": 0
-                    }}}
-                    >
-                {images.map((c,idx)=>(
-                    <SwiperSlide className="hero-logo-container" key={idx}>
-                        <SwiperItem className="hero-item" item={c}/>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-</div>
-    </ContainerStyle>
+                    },
+                    "768": {
+                        "slidesPerView": 6,
+                        "spaceBetween": 0
+                    },
+                    "1024": {
+                            "slidesPerView": 8,
+                            "spaceBetween": 0
+                        }}}
+                        >
+                        {images.map((c,idx)=>(
+                            <SwiperSlide className="hero-logo-container" key={idx}>
+                                <SwiperItem className="hero-item" item={c}/>
+                            </SwiperSlide>
+                            ))}
+                </Swiper>
+            </div>
+        </ContainerStyle>
     );
 }
 export default Hero;

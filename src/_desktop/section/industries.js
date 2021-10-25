@@ -1,9 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import {Container, Pagination,} from 'reactstrap';
+import {Container} from 'reactstrap';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {A11y, Navigation, Scrollbar} from "swiper";
 import Icons from "../../components/Icons";
 import webIcon from "../../components/webIcon";
 const ContainerStyle = styled.div`
@@ -135,7 +134,6 @@ const ContainerStyle = styled.div`
   }
 
 `;
-
 const industries = [
     { id: 1, title: 'Технологи', icon: Icons.tech, iconActive: Icons.techActive },
     { id: 2, title: 'Хувцас, загвар', icon: Icons.cloth, iconActive: Icons.clothActive },

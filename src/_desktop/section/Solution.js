@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import {Container, Button, ModalBody, Form, Input, ModalFooter, Modal, ModalHeader} from 'reactstrap';
+import {Container,  ModalBody, Form, Modal} from 'reactstrap';
 const ContainerStyle = styled.div`
   .solution-container{
     margin-top: 100px;
@@ -230,24 +230,23 @@ function Solution(props) {
                         </div>
                             <div className="button">
                             <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Дэлгэрэнгүй </button>
-                            <SolutionContainer size="xl" isOpen={modal} toggle={toggle} className={className}>
+                                <SolutionContainer size="xl" isOpen={modal} toggle={toggle} className={className}>
                                 <div className="solution-container">
-                                    <button className="btn-close" ></button>
+                                    <button className="btn-close" />
                                     <h4 className="Solution-title">Шийдлүүд</h4>
-                                    <ModalBody>
-
-                                        <Form className="contact-form">
-                                            {solutions.map((item, idx)=>(
-                                                <div className="solution-item-detail" key={idx}>
-                                                    <h5>{item.title}</h5>
-                                                    <p>{item.description}</p>
-                                                </div>
-                                            ))}
-                                        </Form>
-                                    </ModalBody>
+                                        <ModalBody>
+                                            <Form className="contact-form">
+                                                {solutions.map((item, idx)=>(
+                                                    <div className="solution-item-detail" key={idx}>
+                                                        <h5>{item.title}</h5>
+                                                        <p>{item.description}</p>
+                                                    </div>
+                                                ))}
+                                            </Form>
+                                        </ModalBody>
                                 </div>
-                            </SolutionContainer>
-                        </div>
+                                </SolutionContainer>
+                            </div>
                     </div>
                 </div>
             </Container>

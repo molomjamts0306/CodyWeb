@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Logo1 from '../../images/logo-dark.svg';
 import styled from 'styled-components';
-import {Button, Container, Form, Input, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {Button, Container, Form, Input, Modal, ModalBody, ModalFooter} from "reactstrap";
 const ContainerStyle = styled.div`
   .navbar {
     position: fixed;
@@ -109,7 +109,6 @@ const ContainerStyle = styled.div`
     }
   }
 `;
-
 const FormContainer = styled.div`
   background-color: rgb(246, 246, 246);
   border-radius: 20px;
@@ -139,8 +138,6 @@ const FormContainer = styled.div`
     display: flex;
   }
     `;
-
-
 const Navbar=(props) => {
     const {
         buttonLabel,
@@ -154,8 +151,8 @@ const Navbar=(props) => {
         <ContainerStyle>
             <div className="navbar">
                     <Container>
-                                    <a className="logo" href="https://cody.mn" ><img className="Logo-image" src={Logo1} alt="Logo" />
-                                    <h6 className="slogan"> Таны бизнесийг технологиор хөгжүүлнэ </h6></a>
+                        <a className="logo" href="https://cody.mn" ><img className="Logo-image" src={Logo1} alt="Logo" />
+                            <h6 className="slogan"> Таны бизнесийг технологиор хөгжүүлнэ </h6></a>
                             <div className="menu">
                                 <a href="/#cody"><button type="button" >Коди Платформ</button></a>
                                 <a href="/#solution"><button type="button">Шийдэл</button></a>
@@ -163,23 +160,23 @@ const Navbar=(props) => {
                                 <a href="/#customers"> <button type="button">Харилцагч</button></a>
                                 <a href="/about"><Button type="button">Бидний тухай</Button></a>
 
-                                <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Холбоо барих </button>
+                                    <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Холбоо барих </button>
                                 <Modal isOpen={modal} toggle={toggle} className={className}>
                                     <FormContainer>
-                                    <ModalBody>
+                                        <ModalBody>
 
-                                        <Form className="contact-form">
-                                            <div className="shrink-lane">
-                                            <Input  placeholder="Овог нэр" type="text"
+                                            <Form className="contact-form">
+                                                <div className="shrink-lane">
+                                                <Input  placeholder="Овог нэр" type="text"
                                                     className="contact-surname" value=""/><button className="btn-close"></button></div>
-                                            <Input  placeholder="И-мэйл" type="text"
+                                                <Input  placeholder="И-мэйл" type="text"
                                                     className="contact-surname" value=""/>
-                                            <Input  placeholder="Утас" type="text"
+                                                <Input  placeholder="Утас" type="text"
                                                     className="contact-surname" value=""/>
-                                            <Input  placeholder="Байгууллагын нэр" type="text"
+                                                <Input  placeholder="Байгууллагын нэр" type="text"
                                                     className="contact-surname" value=""/>
-                                        </Form>
-                                    </ModalBody>
+                                            </Form>
+                                        </ModalBody>
                                     <ModalFooter>
                                         <Button className="contact-button"  onClick={toggle}>Илгээх</Button>{' '}
                                     </ModalFooter>
@@ -188,7 +185,7 @@ const Navbar=(props) => {
                             </div>
                     </Container>
             </div>
-            <div className="top-fit"></div>
+                <div className="top-fit"></div>
         </ContainerStyle>
     )
 };

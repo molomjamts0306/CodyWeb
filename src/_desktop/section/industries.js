@@ -3,15 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
 import {Container, Pagination,} from 'reactstrap';
 import {Swiper, SwiperSlide} from "swiper/react";
-import FeatureItem from "../../components/FeaturesItem";
 import {A11y, Navigation, Scrollbar} from "swiper";
 import Icons from "../../components/Icons";
 import webIcon from "../../components/webIcon";
-import galleryActive from "../../images/galleryActive.svg";
 const ContainerStyle = styled.div`
   .industries-container{
     margin-top: 100px;
     max-width: 100%;
+    max-height: 100%;
     background-color: white;
     position: relative;
   }
@@ -47,9 +46,14 @@ const ContainerStyle = styled.div`
     font-size: 30px;
     line-height: 1.26;
   }
+  .industries-item-detail{
+    position: relative;
+    //max-width: 100%;
+    object-fit: contain;
+  }
   .industry-section {
-    max-width: 100%;
     display: flex;
+    justify-content: space-between;
   }
     display: flex;
     align-self: center;
@@ -86,10 +90,13 @@ const ContainerStyle = styled.div`
     }
     .industry-swiper {
       flex: 1;
-      width: 800px;
+      max-width: 100%;
+      overflow: hidden;
+      //width: 800px;
     }
-  .swiper-slide{
+  .swiper-slide img {
     object-fit: contain;
+    width: 100%;
   }
   .tech-list{
     margin-right: 20px;
@@ -171,8 +178,8 @@ function Industries() {
     const [index, setIndex] = React.useState(0);
     const [swiper, setSwiper] = React.useState(null);
     return (
-        <ContainerStyle>
             <Container>
+                <ContainerStyle>
                 <div  className="industries-container">
                     <div className="industries-title">
                         <h1>Кодиг ашиглан Та юу бүтээж чадах вэ?</h1>
@@ -186,13 +193,13 @@ function Industries() {
                                             <img className="indust-icon" src={index === i ? item.iconActive : item.icon} alt=""/>
                                             <span className="indust-title">{item.title}</span>
                                         </button>
-                                    )
-                                })}
+                                            )
+                                                })}
                             </ul>
                         </div>
                             <div className="industry-swiper">
                                 <Swiper
-                                    modules={[Navigation, Pagination, Scrollbar, A11y]}
+                                    // modules={[Navigation, Pagination, Scrollbar, A11y]}
                                     slidesPerView={1}
                                     spaceBetween={100}
                                     navigation={true}
@@ -211,8 +218,8 @@ function Industries() {
                             </div>
                     </div>
                 </div>
+                </ContainerStyle>
             </Container>
-        </ContainerStyle>
     );
 }
 

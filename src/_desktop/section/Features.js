@@ -145,46 +145,47 @@ const FormContainer = styled.div`
   }
     `;
 const params = {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
+    slidesPerView: 5,
+    slidesPerGroup: 2,
     spaceBetween: 10,
     autoplay: { delay: 3000, disableOnInteraction: false },
     loop: false,
     slidesPerColumnFill: 'row',
     slidesPerColumn: 2,
     breakpoints: {
-        991: { slidesPerView: 5, slidesPerGroup: 1, spaceBetween: 40 },
-        640: { slidesPerView: 3, slidesPerGroup: 1, spaceBetween: 15 },
-        0: { slidesPerView: 2.3, slidesPerGroup: 1.2, spaceBetween: 15 },
+        1060: {slidesPerView: 5, slidesPerGroup: 2, spaceBetween: 40},
+        991: { slidesPerView: 4, slidesPerGroup: 2, spaceBetween: 30 },
+        640: { slidesPerView: 3, slidesPerGroup: 2, spaceBetween: 20 },
+        0: { slidesPerView: 2, slidesPerGroup: 1, spaceBetween: 10 },
     },
 };
 const features = [
     { id: 1, title: 'Контент менежмент систем', engTitle: 'CMS', icon: Icons.gallery },
-    { id: 2, title: 'Хямдрал & Купон', engTitle: 'Discount & Promotion', icon: Icons.coupon },
-    { id: 3, title: 'Бэлгийн карт', engTitle: 'Gift card', icon: Icons.gift },
-    { id: 4, title: 'Маркетинг хэрэгсэлүүд', engTitle: 'Marketing manager', icon: Icons.lightning },
-    { id: 5, title: 'Захиалгын удирдлага', engTitle: 'Order manager', icon: Icons.cart },
-    { id: 6, title: 'Бүтээгдэхүүний удирдлага', engTitle: 'Product manager', icon: Icons.mouse },
-    { id: 7, title: 'Хэрэглэгчийн удирдлага', engTitle: 'User management', icon: Icons.account },
-    { id: 8, title: 'Худалдааны удирдлага', engTitle: 'Sales manager', icon: Icons.market },
-    { id: 9, title: 'Агуулах, Ложистикийн шийдэл', engTitle: 'Fulfillment manager', icon: Icons.car },
-    { id: 10, title: 'Дижитал хэтэвч', engTitle: 'Digital Wallet', icon: Icons.card },
-    { id: 11, title: 'Эвент удирдлага', engTitle: 'Events', icon: Icons.music },
-    { id: 12, title: 'Цахим зээлийн үйлчилгээ', engTitle: 'Online leasing', icon: Icons.invoice },
-    { id: 13, title: 'Төлбөрийн шийдлүүд', engTitle: 'Payment gateway', icon: Icons.sitemap },
-    { id: 14, title: 'Харилцагчийн удирдлага', engTitle: 'CRM', icon: Icons.rotate360 },
-    { id: 15, title: 'Блог, Нийтлэл', engTitle: 'Blog & Article', icon: Icons.pen },
-    { id: 16, title: 'Борлуулалтын сувгууд', engTitle: 'Sales channels', icon: Icons.focus },
-    { id: 17, title: 'Татварын системийн холболт', engTitle: 'Tax integration', icon: Icons.officeBag },
-    { id: 18, title: 'Тайлан анализ', engTitle: 'Reporting & Analytics', icon: Icons.account },
-    { id: 19, title: 'Аюулгүй байдал, Нууцлал', engTitle: 'Security & Trust', icon: Icons.shieldCheck },
-    { id: 20, title: 'Сургалт нэвтрүүлэлт', engTitle: 'Training', icon: Icons.keyboard },
-    { id: 21, title: 'Тусламж, засвар үйлчилгээ', engTitle: 'Support & maintenance', icon: Icons.chatInfo },
-    { id: 23, title: 'Интеграци, холболтууд', engTitle: 'ERP & Global Integration', icon: Icons.reload },
-    { id: 22, title: 'SEO & Social integration', engTitle: 'SEO & Social integration', icon: Icons.cpu },
-    { id: 24, title: 'API first', engTitle: 'API first', icon: Icons.settings },
-    { id: 25, title: 'Fast & Cloud deployment', engTitle: 'Fast & Cloud deployment', icon: Icons.cloud },
-    { id: 26, title: 'Performance & Scale', engTitle: 'Performance & Scale', icon: Icons.pagesCollection },
+    { id: 2, title: 'Хямдрал & Купон', engTitle: 'Discount & Promotion', icon: Icons.gallery },
+    { id: 3, title: 'Бэлгийн карт', engTitle: 'Gift card', icon: Icons.gallery },
+    { id: 4, title: 'Маркетинг хэрэгсэлүүд', engTitle: 'Marketing manager', icon: Icons.gallery },
+    { id: 5, title: 'Захиалгын удирдлага', engTitle: 'Order manager', icon: Icons.gallery },
+    { id: 6, title: 'Бүтээгдэхүүний удирдлага', engTitle: 'Product manager', icon: Icons.gallery },
+    { id: 7, title: 'Хэрэглэгчийн удирдлага', engTitle: 'User management', icon: Icons.gallery },
+    { id: 8, title: 'Худалдааны удирдлага', engTitle: 'Sales manager', icon: Icons.gallery },
+    { id: 9, title: 'Агуулах, Ложистикийн шийдэл', engTitle: 'Fulfillment manager', icon: Icons.gallery },
+    { id: 10, title: 'Дижитал хэтэвч', engTitle: 'Digital Wallet', icon: Icons.gallery },
+    { id: 11, title: 'Эвент удирдлага', engTitle: 'Events', icon: Icons.gallery },
+    { id: 12, title: 'Цахим зээлийн үйлчилгээ', engTitle: 'Online leasing', icon: Icons.gallery },
+    { id: 13, title: 'Төлбөрийн шийдлүүд', engTitle: 'Payment gateway', icon: Icons.gallery },
+    { id: 14, title: 'Харилцагчийн удирдлага', engTitle: 'CRM', icon: Icons.gallery },
+    { id: 15, title: 'Блог, Нийтлэл', engTitle: 'Blog & Article', icon: Icons.gallery },
+    { id: 16, title: 'Борлуулалтын сувгууд', engTitle: 'Sales channels', icon: Icons.gallery },
+    { id: 17, title: 'Татварын системийн холболт', engTitle: 'Tax integration', icon: Icons.gallery },
+    { id: 18, title: 'Тайлан анализ', engTitle: 'Reporting & Analytics', icon: Icons.gallery },
+    { id: 19, title: 'Аюулгүй байдал, Нууцлал', engTitle: 'Security & Trust', icon: Icons.gallery },
+    { id: 20, title: 'Сургалт нэвтрүүлэлт', engTitle: 'Training', icon: Icons.gallery },
+    { id: 21, title: 'Тусламж, засвар үйлчилгээ', engTitle: 'Support & maintenance', icon: Icons.gallery },
+    { id: 23, title: 'Интеграци, холболтууд', engTitle: 'ERP & Global Integration', icon: Icons.gallery },
+    { id: 22, title: 'SEO & Social integration', engTitle: 'SEO & Social integration', icon: Icons.gallery },
+    { id: 24, title: 'API first', engTitle: 'API first', icon: Icons.gallery },
+    { id: 25, title: 'Fast & Cloud deployment', engTitle: 'Fast & Cloud deployment', icon: Icons.gallery },
+    { id: 26, title: 'Performance & Scale', engTitle: 'Performance & Scale', icon: Icons.gallery },
 ];
 const colors = ['#8855F1', '#FCC204', '#02D4E4', '#FC3F82', '#FCC204'];
 let count = 0;
@@ -214,8 +215,8 @@ const Features = (props) =>{
                 <Container className="swiper-section">
                     <Swiper {...params}>
                         {features.map((v, i) => {
-                            if (count >= 5 || parseInt(features.length / 2, 10) === i) count = 0;
-                            count += 1;
+                            if (count >= 4)  count = 0;
+                            count++;
                             return (
                                 <SwiperSlide key={v.id}>
                                     <FeatureItem item={v} color={colors[count - 1]} />
@@ -248,12 +249,12 @@ const Features = (props) =>{
 let count1 = 0;
 const FeatureModalContents = () => (
     <FeatureModalContentsWrapper>
-        {features.map((item, i) => {
+        {features.map((c, i) => {
             if (count1 >= 4) count1 = 0;
             count1++;
             return (
-                <SwiperSlide key={item.id}>
-                    <FeatureItem item={item} color={colors[count1 - 1]} />
+                <SwiperSlide key={c.id}>
+                    <FeatureItem item={c} color={colors[count1 - 1]} />
                 </SwiperSlide>
             );
         })}

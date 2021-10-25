@@ -50,28 +50,32 @@ const ContainerStyle = styled.div`
       background: linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
       border-radius: 8px;
       color: rgb(255, 255, 255);
+      transition: all 0.1s ease-in-out;
       font-size: 14px;
       padding: 12px 25px;
       font-weight: 600;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-right: 0px;
+      margin-right: 0;
+      :after {
+        width: 0;
+        height: 20px;
+        content: "";
+        display: inline-block;
+        background-image: url(/images/button-heart.svg);
+        background-size: contain;
+        background-position: center 2px;
+        background-repeat: no-repeat;
+        margin-left: 0;
+        transform: rotate(45deg);
+        transition: all 0.1s ease-in-out 0s;
+        animation: animateHeart 1.2s infinite;
+      }
       :hover {
         color: white;
-        ::after {
+        :after{
           width: 20px;
-          height: 20px;
-          content: "";
-          display: inline-block;
-          background-image: url(/images/button-heart.svg);
-          background-size: 17px;
-          background-position: center 2px;
-          background-repeat: no-repeat;
-          margin-left: 0px;
-          transform: rotate(45deg);
-          transition: all 0.2s ease-in-out 1s;
-          animation: animateHeart 1.2s infinite;
         }
       }
     }
@@ -153,10 +157,10 @@ const Navbar=(props) => {
                                     <a className="logo" href="https://cody.mn" ><img className="Logo-image" src={Logo1} alt="Logo" />
                                     <h6 className="slogan"> Таны бизнесийг технологиор хөгжүүлнэ </h6></a>
                             <div className="menu">
-                                <a href="#cody"><button type="button" >Коди Платформ</button></a>
-                                <a href="#solution"><button type="button">Шийдэл</button></a>
-                                <a href="#features"> <button type="button">Боломжууд</button></a>
-                                <a href="#customers"> <button type="button">Харилцагч</button></a>
+                                <a href="/#cody"><button type="button" >Коди Платформ</button></a>
+                                <a href="/#solution"><button type="button">Шийдэл</button></a>
+                                <a href="/#features"> <button type="button">Боломжууд</button></a>
+                                <a href="/#customers"> <button type="button">Харилцагч</button></a>
                                 <a href="/about"><Button type="button">Бидний тухай</Button></a>
 
                                 <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Холбоо барих </button>

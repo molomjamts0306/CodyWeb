@@ -8,6 +8,7 @@ const ContainerStyle = styled.div`
   .hero-container{
     position: relative;
     width: 100%;
+    
   }
   .mouse-scroll{
     position: relative;
@@ -50,6 +51,9 @@ const ContainerStyle = styled.div`
   .trusted-title{
     padding: 100px;
   }
+  .hero-logo-wrapper{
+    box-shadow: rgb(236 236 236) 4px 10px 20px;
+  }
   .brands{
     width: 100%;
   }
@@ -65,24 +69,28 @@ const ContainerStyle = styled.div`
   .main-banner{
     margin-top: 100px;
   }
-  .logos{
-    height: 50px;
-  }
   .swiper-wrapper{
     background-color: white;
     box-shadow: rgb(236 236 236) 4px 10px 20px;
+    
   }
   .swiper-slide{
- 
-  }
-  .logos{
-    height: 50px;
-    width: 50px;
+    padding: 10px 50px;
+    z-index: 10;
+    object-fit: contain;
+    
   }
   .hero-title{
-    width: 100%;
+   img{
+     width: 100%;
+     object-fit: contain;
+   }
   }
-  .hero-item{
+  .brandLogo {
+    width: 100px;
+    height: 50px;
+    object-fit: contain;
+    background-color: white;
 
   }
 `;
@@ -218,7 +226,7 @@ const SwiperItem = ({item}) => {
     const [hovored, setHovored] = React.useState(false);
     return(
         <a href={item.url} onMouseEnter={()=>setHovored(true)} onMouseLeave={()=>setHovored(false)}>
-            <img src={hovored? item.src : item.srcGray} alt="" style={{width:'100px', height:'50px'}}/>
+            <img className="brandLogo" src={hovored? item.src : item.srcGray} alt="" />
         </a>
     )
 }
@@ -227,15 +235,18 @@ function Hero() {
     SwiperCore.use([Autoplay])
     return (
         <ContainerStyle>
-                    <div id="customers" className="hero-container" >
+                    <div className="hero-container" >
                         <div className="hero-title" >
-                            <Swiper autoplay={{ delay: 6000 ,disableOnInteraction: false }}>
-                                <SwiperSlide><img src="/images/banner1.jpg" /></SwiperSlide>
-                                <SwiperSlide><img src="/images/banner2.jpg" /></SwiperSlide>
+                            <Swiper
+                                slidesPerView={1}
+                                loop={true}
+                                autoplay={{ delay: 6000 ,disableOnInteraction: false }}>
+                                <SwiperSlide><img src="/images/banner1.jpg" alt="" /></SwiperSlide>
+                                <SwiperSlide><img src="/images/banner2.jpg" alt="" /></SwiperSlide>
                             </Swiper>
                         </div>
                     </div>
-
+<div className="hero-logo-wrapper">
             <Swiper
                 slidesPerView={12}
                 // autoplay={{ delay: 3000 ,disableOnInteraction: false }}
@@ -248,20 +259,21 @@ function Hero() {
                     "spaceBetween": 0
                 },
                 "768": {
-                    "slidesPerView": 8,
+                    "slidesPerView": 6,
                     "spaceBetween": 0
                 },
                 "1024": {
-                        "slidesPerView": 12,
+                        "slidesPerView": 8,
                         "spaceBetween": 0
                     }}}
                     >
                 {images.map((c,idx)=>(
-                    <SwiperSlide className="hero-item-container" key={idx}>
+                    <SwiperSlide className="hero-logo-container" key={idx}>
                         <SwiperItem className="hero-item" item={c}/>
                     </SwiperSlide>
                 ))}
             </Swiper>
+</div>
     </ContainerStyle>
     );
 }

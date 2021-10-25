@@ -100,7 +100,7 @@ const SolutionContainer = styled(Modal)`
       grid-template-columns: repeat(2, 1fr);
       gap: 49px 80px;
       overflow-y: auto;
-      max-height: 700px;
+      max-height: 500px;
       margin-right: -23px;
       padding-right: 23px;
       ::-webkit-scrollbar{

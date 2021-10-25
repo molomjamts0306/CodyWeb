@@ -1,8 +1,9 @@
-import React from "react";
+import React  from "react";
 import styled from 'styled-components';
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore, {Autoplay} from "swiper";
-import {amway, babyworld, baigal, best, coinhub, cybercom, erdenetMall, gobikhangau} from "../../images/partners";
+import * as partners from "../../images/partners";
+import * as  partnersGray from "../../images/partners/gray"
 const ContainerStyle = styled.div`
   .hero-container{
     position: relative;
@@ -72,24 +73,155 @@ const ContainerStyle = styled.div`
     box-shadow: rgb(236 236 236) 4px 10px 20px;
   }
   .swiper-slide{
-    object-fit: contain;
+ 
   }
   .logos{
     height: 50px;
-    width: 100px;
-    object-fit: contain;
-    filter: grayscale(100%);
-    :hover{
-      filter: grayscale(0%);
-      transform: scale(1.2);
-      transition-duration: 0.2s;
-    }
+    width: 50px;
   }
   .hero-title{
     width: 100%;
   }
+  .hero-item{
 
+  }
 `;
+const {
+    amway,
+    babyworld,
+    baigal,
+    best,
+    coinhub,
+    cybercom,
+    erdenetMall,
+    gobikhangau,
+    lux,
+    nature,
+    noyonpizza,
+    pcmall,
+    rising,
+    shoez,
+    simple,
+    summit,
+    take,
+    tavannuden,
+    ubpassport,
+    urban,
+    voloshina,
+    wellbee,
+    zuwzvi,
+    auto24,
+    amazonoos,
+    americanelectronics,
+    autoparts,
+    ayanchin,
+    btf,
+    carters,
+    comf,
+    converse,
+    apteka,
+    dell,
+    ebazaar,
+    eruulmaa,
+    flower,
+    gerplace,
+    goyol,
+    grocery,
+    homeshopping,
+    inktop,
+    itstore,
+    joinme,
+    mana,
+    metroexpress,
+    michelamazonka,
+    mild,
+    next,
+    oeo,
+    panda,
+    playtime,
+    premiumTaste,
+    roseshop,
+    sarlag,
+    shoppy,
+    smartstore,
+    tanpopo,
+    technozone,
+    vista,
+    xanadu,
+} = partners;
+
+const images = [
+    { url: 'https://ammay.mn/', src: amway, srcGray: partnersGray.amway },
+    { url: 'https://babyworld.mn/', src: babyworld, srcGray: partnersGray.babyworld },
+    { url: 'https://baigalhouse.com/', src: baigal, srcGray: partnersGray.baigal },
+    { url: 'https://bestelectronics.mn/', src: best, srcGray: partnersGray.best },
+    { url: 'https://www.coinhub.mn/', src: coinhub, srcGray: partnersGray.coinhub },
+    { url: 'https://cybercom.mn/', src: cybercom, srcGray: partnersGray.cybercom },
+    { url: 'https://erdenetmall.mn/', src: erdenetMall, srcGray: partnersGray.erdenetMall },
+    { url: 'https://homemall.mn', src: gobikhangau, srcGray: partnersGray.gobikhangau },
+    { url: 'https://shoppylux.mn', src: lux, srcGray: partnersGray.lux },
+    { url: 'https://naturerepublic.mn/', src: nature, srcGray: partnersGray.nature },
+    { url: 'https://noyonpizza.mn/', src: noyonpizza, srcGray: partnersGray.noyonpizza },
+    { url: 'https://pc-mall.mn/', src: pcmall, srcGray: partnersGray.pcmall },
+    { url: 'https://cody..mn/', src: rising, srcGray: partnersGray.rising },
+    { url: 'https://simple.mn', src: simple, srcGray: partnersGray.simple },
+    { url: 'https://take.mn/', src: take, srcGray: partnersGray.take },
+    { url: 'https://tavannuden.com/', src: tavannuden, srcGray: partnersGray.tavannuden },
+    { url: 'https://ubpassport.mn/', src: ubpassport, srcGray: partnersGray.ubpassport },
+    { url: 'https://urbanshop.mn/', src: urban, srcGray: partnersGray.urban },
+    { url: 'https://angelinavoloshina.mn/', src: voloshina, srcGray: partnersGray.voloshina },
+    { url: 'https://eshop.wellbee.mn/', src: wellbee, srcGray: partnersGray.wellbee },
+    { url: 'https://premiumtaste.mn/', src: premiumTaste, srcGray: partnersGray.premiumTaste },
+    { url: 'https://zuvzui.com/', src: zuwzvi, srcGray: partnersGray.zuwzvi },
+    { url: 'https://shoez.mn/', src: shoez, srcGray: partnersGray.shoez },
+    { url: 'https://summit.mn', src: summit, srcGray: partnersGray.summit },
+    { url: 'https://24auto.mn', src: auto24, srcGray: partnersGray.auto24 },
+    { url: 'https://amazonoos.com', src: amazonoos, srcGray: partnersGray.amazonoos },
+    { url: 'https://amex.mn', src: americanelectronics, srcGray: partnersGray.americanelectronics },
+    { url: 'https://autoparts.mn', src: autoparts, srcGray: partnersGray.autoparts },
+    { url: 'https://ayanchin.mn', src: ayanchin, srcGray: partnersGray.ayanchin },
+    { url: 'https://btf.mn', src: btf, srcGray: partnersGray.btf },
+    { url: 'https://carters.mn', src: carters, srcGray: partnersGray.carters },
+    { url: 'https://comf.mn', src: comf, srcGray: partnersGray.comf },
+    { url: 'https://converse.mn', src: converse, srcGray: partnersGray.converse },
+    { url: 'https://apteka.mn/', src: apteka, srcGray: partnersGray.apteka },
+    { url: 'https://dellcenter.mn', src: dell, srcGray: partnersGray.dell },
+    { url: 'https://ebazaar.mn', src: ebazaar, srcGray: partnersGray.ebazaar },
+    { url: 'https://eruulmaa.mn/', src: eruulmaa, srcGray: partnersGray.eruulmaa },
+    { url: 'https://flower.mn', src: flower, srcGray: partnersGray.flower },
+    { url: 'https://gerplace.mn', src: gerplace, srcGray: partnersGray.gerplace },
+    { url: 'https://goyol.mn/', src: goyol, srcGray: partnersGray.goyol },
+    { url: 'https://grocery.shoppy.mn', src: grocery, srcGray: partnersGray.grocery },
+    { url: 'https://homeshopping.mn', src: homeshopping, srcGray: partnersGray.homeshopping },
+    { url: 'https://inktop.mn', src: inktop, srcGray: partnersGray.inktop },
+    { url: 'https://itstore.mn', src: itstore, srcGray: partnersGray.itstore },
+    { url: 'https://joinme.mn', src: joinme, srcGray: partnersGray.joinme },
+    { url: 'https://mana.mn/', src: mana, srcGray: partnersGray.mana },
+    { url: 'https://metro-express.mn', src: metroexpress, srcGray: partnersGray.metroexpress },
+    { url: 'https://michelamazonka.com', src: michelamazonka, srcGray: partnersGray.michelamazonka },
+    { url: 'https://mild.mn', src: mild, srcGray: partnersGray.mild },
+    { url: 'https://next.mn', src: next, srcGray: partnersGray.next },
+    { url: 'https://oeo.mn', src: oeo, srcGray: partnersGray.oeo },
+    { url: 'https://panda.mn/', src: panda, srcGray: partnersGray.panda },
+    { url: 'https://playtime.mn', src: playtime, srcGray: partnersGray.playtime },
+    { url: 'https://roseshop.mn', src: roseshop, srcGray: partnersGray.roseshop },
+    { url: 'https://sarlagleather.com', src: sarlag, srcGray: partnersGray.sarlag },
+    { url: 'https://shoppy.mn', src: shoppy, srcGray: partnersGray.shoppy },
+    { url: 'https://smartstore.mn', src: smartstore, srcGray: partnersGray.smartstore },
+    { url: 'https://tanpopo.mn', src: tanpopo, srcGray: partnersGray.tanpopo },
+    { url: 'https://technozone.mn', src: technozone, srcGray: partnersGray.technozone },
+    { url: 'https://vistastore.mn', src: vista, srcGray: partnersGray.vista },
+    { url: 'https://wineshop.mn', src: xanadu, srcGray: partnersGray.xanadu },
+];
+
+const SwiperItem = ({item}) => {
+    const [hovored, setHovored] = React.useState(false);
+    return(
+        <a href={item.url} onMouseEnter={()=>setHovored(true)} onMouseLeave={()=>setHovored(false)}>
+            <img src={hovored? item.src : item.srcGray} alt="" style={{width:'100px', height:'50px'}}/>
+        </a>
+    )
+}
 
 function Hero() {
     SwiperCore.use([Autoplay])
@@ -105,35 +237,30 @@ function Hero() {
                     </div>
 
             <Swiper
-                slidesPerView={1}
-                autoplay={{ delay: 3000 ,disableOnInteraction: false }}
+                slidesPerView={12}
+                // autoplay={{ delay: 3000 ,disableOnInteraction: false }}
                 loop={true}
-                loopPreventsSlide={true}
+                loopPreventsSlide={false}
                 spaceBetween={0}
                 breakpoints={{
                 "640": {
-                    "slidesPerView": 2,
-                    "spaceBetween": 0
-                },
-                "768": {
                     "slidesPerView": 4,
                     "spaceBetween": 0
                 },
+                "768": {
+                    "slidesPerView": 8,
+                    "spaceBetween": 0
+                },
                 "1024": {
-                        "slidesPerView": 5,
+                        "slidesPerView": 12,
                         "spaceBetween": 0
                     }}}
                     >
-                <div className="swiper-wrapper">
-                    <SwiperSlide><div className="contain-box"><img className="logos" src={amway} alt="trusted-logo" /></div></SwiperSlide>
-                    <SwiperSlide><div className="contain-box"><img className="logos" src={babyworld} alt="trusted-logo" /></div></SwiperSlide>
-                    <SwiperSlide><div className="contain-box"><img className="logos" src={baigal} alt="trusted-logo" /></div></SwiperSlide>
-                    <SwiperSlide><div className="contain-box"><img className="logos" src={best} alt="trusted-logo" /></div></SwiperSlide>
-                    <SwiperSlide><div className="contain-box"><img className="logos" src={coinhub} alt="trusted-logo" /></div></SwiperSlide>
-                    <SwiperSlide><div className="contain-box"><img className="logos" src={cybercom} alt="trusted-logo" /></div></SwiperSlide>
-                    <SwiperSlide><div className="contain-box"><img className="logos" src={erdenetMall} alt="trusted-logo" /></div></SwiperSlide>
-                    <SwiperSlide><div className="contain-box"><img className="logos" src={gobikhangau} alt="trusted-logo" /></div></SwiperSlide>
-                </div>
+                {images.map((c,idx)=>(
+                    <SwiperSlide className="hero-item-container" key={idx}>
+                        <SwiperItem className="hero-item" item={c}/>
+                    </SwiperSlide>
+                ))}
             </Swiper>
     </ContainerStyle>
     );

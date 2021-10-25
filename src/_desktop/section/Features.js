@@ -68,7 +68,7 @@ const FeatureModalContentsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   overflow-y: auto;
-  max-height: 700px;
+  max-height: 70vh;
   padding: 20px 25px 20px 20px;
   margin: -20px -25px -20px -20px;
   &::-webkit-scrollbar {

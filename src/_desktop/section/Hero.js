@@ -242,7 +242,7 @@ function Hero() {
             <div className="hero-logo-wrapper">
                 <Swiper
                     slidesPerView={12}
-                    // autoplay={{ delay: 3000 ,disableOnInteraction: false }}
+                    autoplay={{ delay: 3000 ,disableOnInteraction: false }}
                     loop={true}
                     loopPreventsSlide={false}
                     spaceBetween={0}

@@ -54,10 +54,6 @@ const ContainerStyle = styled.div`
     display: flex;
     justify-content: space-between;
   }
-    display: flex;
-    align-self: center;
-    justify-content: space-between;
-  
     .industry-button {
       flex: 0 0 250px;
       min-height: 500px;
@@ -100,15 +96,12 @@ const ContainerStyle = styled.div`
   .tech-list{
     margin-right: 20px;
   }
-  .industry-menus{
-  }
   .item-wrapper{
     display: flex;
     align-items: center;
     border: none;
     margin: 0 0 10px;
     background-color: white;
-
     &:hover, &.active{
       color: rgb(136, 85, 241);
       transition-duration: 0.5s;
@@ -122,7 +115,6 @@ const ContainerStyle = styled.div`
     width: 48px;
     height: 48px;
     padding: 10px;
-    //margin: 5px;
     border-radius: 6px;
     margin-right: 20px;
     &:hover ,&.active{
@@ -132,7 +124,6 @@ const ContainerStyle = styled.div`
       background-color: #8855F1!important;
     }
   }
-
 `;
 const industries = [
     { id: 1, title: 'Технологи', icon: Icons.tech, iconActive: Icons.techActive },
@@ -178,47 +169,42 @@ function Industries() {
     return (
             <Container>
                 <ContainerStyle>
-                <div  className="industries-container">
-                    <div className="industries-title">
-                        <h1>Кодиг ашиглан Та юу бүтээж чадах вэ?</h1>
-                    </div>
-                    <div className="industry-section">
-                        <div className="industry-button">
-                            <ul className="industry-menus">
-                                {industries.map((item,i) => {
-                                    return (
-                                        <button className={`item-wrapper ${index === i ? 'active' : ''}`} onClick={() => swiper ? swiper.slideTo(i) : false}>
-                                            <img className="indust-icon" src={index === i ? item.iconActive : item.icon} alt=""/>
-                                            <span className="indust-title">{item.title}</span>
-                                        </button>
-                                            )
-                                                })}
-                            </ul>
+                    <div  className="industries-container">
+                        <div className="industries-title">
+                            <h1>Кодиг ашиглан Та юу бүтээж чадах вэ?</h1>
                         </div>
-                            <div className="industry-swiper">
-                                <Swiper
-                                    // modules={[Navigation, Pagination, Scrollbar, A11y]}
-                                    slidesPerView={1}
-                                    spaceBetween={100}
-                                    navigation={true}
-                                    // pagination={{ clickable: true }}
-                                    onSlideChange={(e) => setIndex(e.realIndex)}
-                                    onSwiper={setSwiper}
-                                    // autoplay={{ delay: 5000 ,disableOnInteraction: false }}
-                                    >
-                                    {web.map((c, idx)=>(
-                                        <SwiperSlide className="industries-item-detail" key={idx}>
-                                                <img src={c.icon} alt="industry-slide"/>
-                                        </SwiperSlide>
-                                    ))}
-                                    {/*<SwiperSlide><img className="web" src={techno} alt="industry-swiper" /></SwiperSlide>*/}
-                                </Swiper>
+                        <div className="industry-section">
+                            <div className="industry-button">
+                                <ul className="industry-menus">
+                                    {industries.map((item,i) => {
+                                        return (
+                                            <button className={`item-wrapper ${index === i ? 'active' : ''}`} onClick={() => swiper ? swiper.slideTo(i) : false}>
+                                                <img className="indust-icon" src={index === i ? item.iconActive : item.icon} alt=""/>
+                                                <span className="indust-title">{item.title}</span>
+                                            </button>
+                                                )
+                                                    })}
+                                </ul>
                             </div>
+                                <div className="industry-swiper">
+                                    <Swiper
+                                        slidesPerView={1}
+                                        spaceBetween={100}
+                                        navigation={true}
+                                        onSlideChange={(e) => setIndex(e.realIndex)}
+                                        onSwiper={setSwiper}
+                                        >
+                                        {web.map((c, idx)=>(
+                                            <SwiperSlide className="industries-item-detail" key={idx}>
+                                                    <img src={c.icon} alt="industry-slide"/>
+                                            </SwiperSlide>
+                                        ))}
+                                    </Swiper>
+                                </div>
+                        </div>
                     </div>
-                </div>
                 </ContainerStyle>
             </Container>
     );
 }
-
 export default Industries;

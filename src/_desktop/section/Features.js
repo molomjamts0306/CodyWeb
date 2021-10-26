@@ -96,7 +96,6 @@ const FormContainer = styled.div`
   border-radius: 20px;
 .contact-form{
   padding:30px 20px;
- 
       .form-control{
           margin-bottom: 15px;
       }
@@ -109,7 +108,6 @@ const FormContainer = styled.div`
     justify-content: center!important;
     padding:20px;
   .contact-button{
-    
     width: 100%;
     background:linear-gradient(
             95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
@@ -119,15 +117,12 @@ const FormContainer = styled.div`
     display: flex;
   }
   .Solution-title{
-
-
     color: rgb(30, 32, 48);
     font-weight: bold;
     text-align: center;
     font-size: 28px;
     width: fit-content;
     margin: auto;
-
     ::after{
       content: "";
       width: 40%;
@@ -146,14 +141,14 @@ const FormContainer = styled.div`
     `;
 const params = {
     slidesPerView: 5,
-    // autoplay: { delay: 3000, disableOnInteraction: false },
+    autoplay: { delay: 3000, disableOnInteraction: false },
     loop: false,
     slidesPerColumnFill: 'row',
     slidesPerColumn: 2,
     breakpoints: {
-        1024: {slidesPerView: 5, slidesPerGroup: 3, spaceBetween: 40},
-        768: { slidesPerView: 4, slidesPerGroup: 3, spaceBetween: 30 },
-        640: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
+        1024: {slidesPerView: 5, slidesPerGroup: 2, spaceBetween: 40},
+        768: { slidesPerView: 4, slidesPerGroup: 2, spaceBetween: 30 },
+        640: { slidesPerView: 3, slidesPerGroup: 2, spaceBetween: 20 },
         0: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 10 },
     },
 };
@@ -193,9 +188,7 @@ const Features = (props) =>{
         buttonLabel,
         className
     }= props;
-
     const [modal, setModal] = useState(false);
-
     const toggle = () => setModal(!modal);
     {
         const [isOpen] = React.useState(false);
@@ -205,43 +198,41 @@ const Features = (props) =>{
     }
 
     return (
-        <>
             <FeaturesWrapper >
                 <div id="features" className="features-title">
                     <h1>Системийн боломжууд</h1>
                 </div>
-                <Container className="swiper-section">
-                    <Swiper {...params}>
-                        {features.map((v, i) => {
-                            if (count >= 4)  count = 0;
-                            count++;
-                            return (
-                                <SwiperSlide key={v.id}>
-                                    <FeatureItem item={v} color={colors[count - 1]} />
-                                </SwiperSlide>
-                            );
-                        })}
-                    </Swiper>
-                </Container>
+                    <Container className="swiper-section">
+                        <Swiper {...params}>
+                            {features.map((v, i) => {
+                                if (count >= 4)  count = 0;
+                                count++;
+                                return (
+                                    <SwiperSlide key={v.id}>
+                                        <FeatureItem item={v} color={colors[count - 1]} />
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </Swiper>
+                    </Container>
                 <div className="button">
                     <Button className="button-click" onClick={toggle}  ><span>{buttonLabel} Дэлгэрэнгүй</span></Button>
-                    <Modal size="xl" isOpen={modal} toggle={toggle} className={className}>
-                        <FormContainer>
-                            <h4 className="Solution-title">Шийдлүүд</h4>
-                            <button className="btn-close" />
-                                <ModalBody>
-                                    <Form className="contact-form">
-                                        <FeatureModalContents/>
-                                    </Form>
-                                </ModalBody>
-                            <ModalFooter>
-                            </ModalFooter>
-                        </FormContainer>
-                    </Modal>
+                        <Modal size="xl" isOpen={modal} toggle={toggle} className={className}>
+                            <FormContainer>
+                                <h4 className="Solution-title">Шийдлүүд</h4>
+                                <button className="btn-close" />
+                                    <ModalBody>
+                                        <Form className="contact-form">
+                                            <FeatureModalContents/>
+                                        </Form>
+                                    </ModalBody>
+                                <ModalFooter>
+                                </ModalFooter>
+                            </FormContainer>
+                        </Modal>
                 </div>
-                <div className="featuresbottom"><img src="/images/hovertop.jpg" className="w-100" alt="featuresbottom"/> </div>
+                <div className="featuresbottom"><img src="/images/hovertop.jpg" className="w-100" alt=""/> </div>
             </FeaturesWrapper>
-        </>
     );
 };
 let count1 = 0;

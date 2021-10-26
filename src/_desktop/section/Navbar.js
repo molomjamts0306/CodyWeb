@@ -86,7 +86,6 @@ const ContainerStyle = styled.div`
   .logo {
     text-decoration: none;
   }
-
   
   @keyframes animateHeart {
     0% {
@@ -114,7 +113,6 @@ const FormContainer = styled.div`
   border-radius: 20px;
 .contact-form{
   padding:30px 20px;
- 
       .form-control{
           margin-bottom: 15px;
       }
@@ -127,12 +125,10 @@ const FormContainer = styled.div`
     justify-content: center!important;
     padding:20px;
   .contact-button{
-    
     width: 100%;
     background:linear-gradient(
             95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
- 
-  }
+                  }
   }
   .shrink-lane{
     display: flex;
@@ -144,9 +140,7 @@ const Navbar=(props) => {
         className
     } = props;
     const [modal, setModal] = useState(false);
-
     const toggle = () => setModal(!modal);
-
     return (
         <ContainerStyle>
             <div className="navbar">
@@ -164,22 +158,23 @@ const Navbar=(props) => {
                                 <Modal isOpen={modal} toggle={toggle} className={className}>
                                     <FormContainer>
                                         <ModalBody>
-
                                             <Form className="contact-form">
                                                 <div className="shrink-lane">
-                                                <Input  placeholder="Овог нэр" type="text"
-                                                    className="contact-surname" value=""/><button className="btn-close"></button></div>
-                                                <Input  placeholder="И-мэйл" type="text"
-                                                    className="contact-surname" value=""/>
-                                                <Input  placeholder="Утас" type="text"
-                                                    className="contact-surname" value=""/>
-                                                <Input  placeholder="Байгууллагын нэр" type="text"
-                                                    className="contact-surname" value=""/>
+                                                    <Input  placeholder="Овог нэр" type="text"
+                                                        className="contact-surname" value=""/>
+                                                    <button className="btn-close"></button>
+                                                </div>
+                                                    <Input  placeholder="И-мэйл" type="text"
+                                                        className="contact-surname" value=""/>
+                                                    <Input  placeholder="Утас" type="text"
+                                                        className="contact-surname" value=""/>
+                                                    <Input  placeholder="Байгууллагын нэр" type="text"
+                                                        className="contact-surname" value=""/>
                                             </Form>
                                         </ModalBody>
-                                    <ModalFooter>
-                                        <Button className="contact-button"  onClick={toggle}>Илгээх</Button>{' '}
-                                    </ModalFooter>
+                                            <ModalFooter>
+                                                <Button className="contact-button"  onClick={toggle}>Илгээх</Button>{' '}
+                                            </ModalFooter>
                                     </FormContainer>
                                 </Modal>
                             </div>

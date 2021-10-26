@@ -8,7 +8,6 @@ const ContainerStyle = styled.div`
   .hero-container{
     position: relative;
     width: 100%;
-    
   }
   .mouse-scroll{
     position: relative;
@@ -72,13 +71,11 @@ const ContainerStyle = styled.div`
   .swiper-wrapper{
     background-color: white;
     box-shadow: rgb(236 236 236) 4px 10px 20px;
-    
   }
   .swiper-slide{
     padding: 10px 50px;
     z-index: 10;
     object-fit: contain;
-    
   }
   .hero-title{
    img{
@@ -91,7 +88,6 @@ const ContainerStyle = styled.div`
     height: 50px;
     object-fit: contain;
     background-color: white;
-
   }
 `;
 const {
@@ -220,7 +216,6 @@ const images = [
     { url: 'https://vistastore.mn', src: vista, srcGray: partnersGray.vista },
     { url: 'https://wineshop.mn', src: xanadu, srcGray: partnersGray.xanadu },
 ];
-
 const SwiperItem = ({item}) => {
     const [hovored, setHovored] = React.useState(false);
     return(
@@ -229,7 +224,6 @@ const SwiperItem = ({item}) => {
         </a>
     )
 }
-
 function Hero() {
     SwiperCore.use([Autoplay])
     return (

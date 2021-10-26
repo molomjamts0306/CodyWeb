@@ -8,7 +8,6 @@ const ContainerStyle = styled.div`
     max-width: 100%;
     background-color: white;
     position: relative;
-    
   }
   .solution-title{
     width: fit-content;
@@ -127,14 +126,12 @@ const SolutionContainer = styled(Modal)`
       display: flex;
     }
     .Solution-title{
-
       color: rgb(30, 32, 48);
       font-weight: bold;
       text-align: center;
       font-size: 28px;
       width: fit-content;
       margin: auto;
-
       ::after{
         content: "";
         width: 40%;
@@ -165,27 +162,22 @@ const SolutionContainer = styled(Modal)`
     justify-content: center!important;
     padding:20px;
     .contact-button{
-
       width: 100%;
       background:linear-gradient(
               95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
-
     }
   }
 .btn-close{
   float: right;
 }
 `;
-
 function Solution(props) {
     const {
         buttonLabel,
         className,
     } = props;
     const [modal, setModal] = useState(false);
-
     const toggle = () => setModal(!modal);
-
     const solutions=[
         {title:'Headless Ecommerce', description:"Headless цахим худалдааны  шийдлээр бизнесийн онцлогтоо тохирох цахим худалдааг бүтээж ирээдүйтэй бэлтгэ"},
         {title:'Multi Store', description:"Ашиглахад хялбар, салбар бизнесүүдийнхээ сүлжээг бий болгож удирдах"},
@@ -201,7 +193,6 @@ function Solution(props) {
         {title:'Online to Offline', description:"Pos (Point of sale), смарт дэлгүүрийн шийдлийн тусламжтай худалдаагаа өргөжүүлэх"},
         {title:'Social Ecommerce', description:"Томоохон сошиал суваг дээр худалдааны орон зайгаа бий болгох боломжууд"},
     ]
-
     return  (
         <ContainerStyle >
             <Container>
@@ -229,28 +220,28 @@ function Solution(props) {
                             </div>
                         </div>
                             <div className="button">
-                            <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Дэлгэрэнгүй </button>
-                                <SolutionContainer size="xl" isOpen={modal} toggle={toggle} className={className}>
-                                <div className="solution-container">
-                                    <button className="btn-close" />
-                                    <h4 className="Solution-title">Шийдлүүд</h4>
-                                        <ModalBody>
-                                            <Form className="contact-form">
-                                                {solutions.map((item, idx)=>(
-                                                    <div className="solution-item-detail" key={idx}>
-                                                        <h5>{item.title}</h5>
-                                                        <p>{item.description}</p>
-                                                    </div>
-                                                ))}
-                                            </Form>
-                                        </ModalBody>
-                                </div>
-                                </SolutionContainer>
+                                <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Дэлгэрэнгүй </button>
+                                    <SolutionContainer size="xl" isOpen={modal} toggle={toggle} className={className}>
+                                        <div className="solution-container">
+                                            <button className="btn-close" />
+                                            <h4 className="Solution-title">Шийдлүүд</h4>
+                                                <ModalBody>
+                                                    <Form className="contact-form">
+                                                        {solutions.map((item, idx)=>(
+                                                            <div className="solution-item-detail" key={idx}>
+                                                                <h5>{item.title}</h5>
+                                                                <p>{item.description}</p>
+                                                            </div>
+                                                        ))}
+                                                    </Form>
+                                                </ModalBody>
+                                        </div>
+                                    </SolutionContainer>
                             </div>
                     </div>
                 </div>
             </Container>
-            <div className="featurestopbackground"><img src="/images/hovertop.jpg" className="w-100" alt="featuresbackground"/> </div>
+                <div className="featurestopbackground"><img src="/images/hovertop.jpg" className="w-100" alt="featuresbackground"/> </div>
         </ContainerStyle>
     );
 }

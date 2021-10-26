@@ -157,7 +157,7 @@ const Navbar=(props) => {
                                 <a href="/#cody"><button type="button" >Коди Платформ</button></a>
                                 <a href="/#solution"><button type="button">Шийдэл</button></a>
                                 <a href="/#features"> <button type="button">Боломжууд</button></a>
-                                <a href="/#customers"> <button type="button">Харилцагч</button></a>
+                                <a href="/#hero"> <button type="button">Харилцагч</button></a>
                                 <a href="/about"><Button type="button">Бидний тухай</Button></a>
 
                                     <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Холбоо барих </button>

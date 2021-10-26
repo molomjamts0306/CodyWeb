@@ -234,7 +234,7 @@ function Hero() {
     SwiperCore.use([Autoplay])
     return (
         <ContainerStyle>
-                    <div className="hero-container" >
+                    <div id="hero" className="hero-container" >
                         <div className="hero-title" >
                             <Swiper
                                 slidesPerView={1}

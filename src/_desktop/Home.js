@@ -15,10 +15,10 @@ const ContainerComp = styled.div`
     max-width: 100%;!important;
     width: 100%;
   }
-.site {
-  max-width: 100%;
-  background: #F5F5F5;
-}
+  .site {
+    max-width: 100%;
+    background: #F5F5F5;
+  }
   .backcode {
     position: absolute;
     left: 0;
@@ -28,21 +28,20 @@ const ContainerComp = styled.div`
 `;
 function Home() {
     return (
-        <div  className="codyWebContain">
+        <div className="codyWebContain">
             <MessengerCustomerChat
                 pageId="111468470600452"
                 appId="955395061711308"
             />
-                <ContainerComp>
-
-                        <Navbar/>
-                        <Hero/>
-                        <Cody/>
-                        <Solution/>
-                        <Features/>
-                        <Industries/>
-                        <Footer/>
-                </ContainerComp>
+            <ContainerComp>
+                <Navbar/>
+                <Hero/>
+                <Cody/>
+                <Solution/>
+                <Features/>
+                <Industries/>
+                <Footer/>
+            </ContainerComp>
         </div>
     );
 }

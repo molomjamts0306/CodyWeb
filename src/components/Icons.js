@@ -60,6 +60,7 @@ import childActive from '../images/industryIcon/huuhedActive.svg'
 import goo from '../images/industryIcon/gooSaihan.svg'
 import gooActive from '../images/industryIcon/gooSaihanActive.svg'
 import notes from '../images/featuresIcon/reporting.svg'
+import facebook from '../images/footerIcon/facebook.svg'
 const Icons={
     gallery,
     galleryActive,
@@ -123,6 +124,6 @@ const Icons={
     furnitureActive,
     childActive,
     gooActive,
-
+    facebook,
 }
 export default Icons;

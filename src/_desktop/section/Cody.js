@@ -1,12 +1,14 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
+import {Container, Row} from 'reactstrap';
+import {Swiper, SwiperSlide} from "swiper/react";
+import SwiperCore, {EffectFade,Navigation,Pagination} from 'swiper';
 import CodyImage0 from "../../images/thatiscody.svg";
 import CodyImage1 from "../../images/codyweb2.png";
 import CodyImage2 from "../../images/codyweb3.png";
-import {Container, Row, Col} from 'reactstrap';
-import {Swiper, SwiperSlide} from "swiper/react";
-import SwiperCore, {EffectFade,Navigation,Pagination} from 'swiper';
+
+SwiperCore.use([EffectFade,Navigation,Pagination]);
+
 const ContainerStyle = styled.div`
   .cody-container{
     margin-top: 50px;
@@ -41,64 +43,49 @@ const ContainerStyle = styled.div`
     padding: 50px;
   }
 `;
-SwiperCore.use([EffectFade,Navigation,Pagination]);
+
+const slides = [{
+    title: 'КОДИ ПЛАТФОРМ',
+    image: CodyImage0,
+    description: 'Худалдаа, үйлчилгээний бизнест зориулсан, дата, хиймэл оюун ухаанд суурилсан, тасралтгүй хөгжүүлэлттэй Цахим худалдааны цогц платформ юм. ',
+},{
+    title: 'ЦАХИМ ХУДАЛДААНЫ ЦОГЦ ПЛАТФОРМ',
+    image: CodyImage1,
+    description: 'Бид маш бага зардлаар таны бизнесийг цахим орчинд ажиллах боломжийг бүрдүүлнэ. Та богино хугацаанд, найдвартай, уян хатан цахим худалдаагаа эхлүүлээрэй',
+},{
+    title: 'ПЛАТФОРМЫН ХҮЧИЙГ МЭДЭР',
+    image: CodyImage2,
+    description: 'Дэлхийн тэргүүлэгч технологиудыг хослуулан ашиглаж, технологийн тасралтгүй хөгжүүлэлттээр хэрэглэгч байгууллагыг хангана. Платформын гайхалтай шийдэлүүдийг ашиглан борлуулалтаа өсгөөрэй.',
+}];
 function Cody() {
     return (
         <ContainerStyle>
             <Container>
                 <div id="cody" className="cody-container">
-                <Row>
-                        <div className="cody-title">
-                        </div>
-                            <Row>
-                                    <Swiper spaceBetween={30} effect={'fade'} autoplay={{ delay: 3000 ,disableOnInteraction: false }}>
+                    <Row>
+                        <div className="cody-title" />
+                        <Row>
+                            <Swiper spaceBetween={30} effect={'fade'} autoplay={{ delay: 3000 ,disableOnInteraction: false }}>
+                                {
+                                    slides.map((c) =>
                                         <SwiperSlide>
                                             <div className="cody-section">
                                                 <div className="picture">
-                                                    <img src={CodyImage0} alt="picture"/>
+                                                    <img src={c.image} alt="picture"/>
                                                 </div>
                                                 <div className="d-flex">
                                                     <div className="title">
-                                                        <h3>КОДИ ПЛАТФОРМ</h3>
-                                                            <p>Худалдаа, үйлчилгээний бизнест зориулсан, дата, хиймэл оюун ухаанд суурилсан, тасралтгүй
-                                                                хөгжүүлэлттэй Цахим худалдааны цогц платформ юм. </p>
+                                                        <h3>{c.title}</h3>
+                                                        <p>{c.description}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </SwiperSlide>
-                                        <SwiperSlide>
-                                            <div className="cody-section">
-                                                <div className="picture">
-                                                    <img src={CodyImage1} alt="picture"/>
-                                                </div>
-                                                <div className="d-flex">
-                                                    <div className="title">
-                                                        <h3>ЦАХИМ ХУДАЛДААНЫ ЦОГЦ ПЛАТФОРМ</h3>
-                                                        <p>Бид маш бага зардлаар таны бизнесийг цахим орчинд ажиллах боломжийг
-                                                            бүрдүүлнэ. Та богино хугацаанд, найдвартай, уян хатан цахим худалдаагаа эхлүүлээрэй </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </SwiperSlide>
-                                        <SwiperSlide>
-                                            <div className="cody-section">
-                                                <div className="picture">
-                                                    <img src={CodyImage2} alt="picture"/>
-                                                </div>
-                                                <div className="d-flex">
-                                                    <div className="title">
-                                                        <h3>ПЛАТФОРМЫН ХҮЧИЙГ МЭДЭР</h3>
-                                                        <p>Дэлхийн тэргүүлэгч технологиудыг хослуулан ашиглаж, технологийн тасралтгүй
-                                                            хөгжүүлэлттээр хэрэглэгч байгууллагыг хангана. Платформын гайхалтай шийдэлүүдийг
-                                                            ашиглан борлуулалтаа өсгөөрэй. </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </SwiperSlide>
-                                    </Swiper>
-                            </Row>
-
-                            </Row>
+                                    )
+                                }
+                            </Swiper>
+                        </Row>
+                    </Row>
                 </div>
             </Container>
         </ContainerStyle>

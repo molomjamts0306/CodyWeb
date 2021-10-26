@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
 import {Button, Container, Form, Modal, ModalBody, ModalFooter} from 'reactstrap';
-import { Swiper, SwiperSlide} from 'swiper/react';
-import FeatureItem from "../../components/FeaturesItem";
 import SwiperCore, {Autoplay} from "swiper";
+import { Swiper, SwiperSlide} from 'swiper/react';
+import styled from 'styled-components';
+import FeatureItem from "../../components/FeaturesItem";
 import Icons from "../../components/Icons";
+SwiperCore.use([Autoplay])
+
 const FeaturesWrapper = styled.div`
   background-color: #f1f3ff;
   .features-title{
@@ -139,6 +141,7 @@ const FormContainer = styled.div`
     margin-right: 20px;
   }
     `;
+
 const params = {
     slidesPerView: 5,
     autoplay: { delay: 3000, disableOnInteraction: false },
@@ -181,40 +184,39 @@ const features = [
     { id: 26, title: 'Performance & Scale', engTitle: 'Performance & Scale', icon: Icons.pagesCollection },
 ];
 const colors = ['#8855F1', '#FCC204', '#02D4E4', '#FC3F82', '#FCC204'];
+
 let count = 0;
-SwiperCore.use([Autoplay])
 const Features = (props) =>{
     const {
         buttonLabel,
         className
     }= props;
     const [modal, setModal] = useState(false);
+
+    React.useEffect(() => {
+        count = 0;
+    }, [modal]);
+
     const toggle = () => setModal(!modal);
-    {
-        const [isOpen] = React.useState(false);
-        React.useEffect(() => {
-            count = 0;
-        }, [isOpen]);
-    }
 
     return (
             <FeaturesWrapper >
                 <div id="features" className="features-title">
                     <h1>Системийн боломжууд</h1>
                 </div>
-                    <Container className="swiper-section">
-                        <Swiper {...params}>
-                            {features.map((v, i) => {
-                                if (count >= 4)  count = 0;
-                                count++;
-                                return (
-                                    <SwiperSlide key={v.id}>
-                                        <FeatureItem item={v} color={colors[count - 1]} />
-                                    </SwiperSlide>
-                                );
-                            })}
-                        </Swiper>
-                    </Container>
+                <Container className="swiper-section">
+                    <Swiper {...params}>
+                        {features.map((v, i) => {
+                            if (count >= 4)  count = 0;
+                            count++;
+                            return (
+                                <SwiperSlide key={v.id}>
+                                    <FeatureItem item={v} color={colors[count - 1]} />
+                                </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
+                </Container>
                 <div className="button">
                     <Button className="button-click" onClick={toggle}  ><span>{buttonLabel} Дэлгэрэнгүй</span></Button>
                         <Modal size="xl" isOpen={modal} toggle={toggle} className={className}>

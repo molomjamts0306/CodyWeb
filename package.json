@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "images": "^3.2.3",
     "utils": "^0.3.1"
   }
 }

@@ -1,9 +1,8 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import styled from 'styled-components';
-import facebookIcon from '../../images/facebook.svg'
 import {Container} from 'reactstrap';
-import * as url from "url";
+import Icons from  "../../components/Icons";
+
 const ContainerStyle = styled.div`
   .footer-container{
   margin-top: 100px;
@@ -12,18 +11,18 @@ const ContainerStyle = styled.div`
     transform: translate(-50%, -50%);
     width: 800px;
     position: absolute;
-    margin: 0px auto;
+    margin: 0 auto;
     background: rgb(255, 255, 255);
     left: 50%;
     padding: 20px 50px;
-    box-shadow: rgb(0 0 0 / 20%) 0px 12px 28px;
+    box-shadow: rgb(0 0 0 / 20%) 0 12px 28px;
     ::before{
       content: "";
-      width: 0px;
-      height: 0px;
-      top: 0px;
+      width: 0;
+      height: 0;
+      top: 0;
       border-style: solid;
-      border-width: 0px 0px 64px 64px;
+      border-width: 0 0 64px 64px;
       border-color: transparent transparent rgb(238, 238, 238);
       position: absolute;
       left: -64px;
@@ -32,11 +31,11 @@ const ContainerStyle = styled.div`
     }
     ::after{
       content: "";
-      width: 0px;
-      height: 0px;
-      top: 0px;
+      width: 0;
+      height: 0;
+      top: 0;
       border-style: solid;
-      border-width: 64px 0px 0px 64px;
+      border-width: 64px 0 0 64px;
       border-color: transparent transparent transparent rgb(238, 238, 238);
       position: absolute;
       right: -64px;
@@ -78,7 +77,7 @@ const ContainerStyle = styled.div`
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  padding: 0px 30px;
+  padding: 0 30px;
   } 
   .footer-menu{
     display: flex;
@@ -109,7 +108,7 @@ const ContainerStyle = styled.div`
     padding: 0;
   }
   li{
-    margin: 10px 0px;
+    margin: 10px 0;
     font-weight: 400;
     font-size: 13px;
   }
@@ -130,6 +129,27 @@ const ContainerStyle = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     margin-top: 40px;
   }
+  .icon-column {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    ul{
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-top: 20px;
+      padding-right: 142px!important;
+    }
+  }
+  .icon {
+    width: 18px;
+    height: 18px;
+    margin-right:  5px;
+  }
+  h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
   .copyright-section{
     display: flex;
     margin-top: 60px;
@@ -143,7 +163,7 @@ const ContainerStyle = styled.div`
     a{
       color: rgb(255, 255, 255);
       font-size: 14px;
-      margin-bottom: 0px;
+      margin-bottom: 0;
       :hover{
         color: white;
       }
@@ -173,37 +193,67 @@ const ContainerStyle = styled.div`
       background-position: center center;
       }
     }
-  }
-.icon-column {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-    ul{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-top: 20px;
-    padding-right: 142px!important;
-    }
-  }
-.instagram-icon {
-  width: 18px;
-  height: 18px;
-  margin-right:  5px;
-  background-image:  url("/images/instagram.svg");
-}
-.facebook-icon {
-  width: 18px;
-  height: 18px;
-  margin-right:  5px;
-  background-image:  url("/images/acebook.svg");
-}
-h4 {
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-{
 `;
+const links = [
+    { id: 1, title: 'Airlink', link:'http://airlink.mn',description:'Нислэгийн билет' },
+    { id: 2, title: '24auto', link:'http://24auto.mn',description:'авто сэлбэг' },
+    { id: 3, title: 'Comf', link:'http://24auto.mn',description:'хүүхдийн тавилга' },
+    { id: 4, title: 'Haus', link:'http://24auto.mn',description:'барилгын материал' },
+    { id: 5, title: 'Amway', link:'http://24auto.mn',description:'гэр ахуй' },
+    { id: 6, title: 'Zanadu', link:'http://24auto.mn',description:'дарс' },
+    { id: 7, title: 'shoppyLux', link:'http://24auto.mn',description:'the luxury you deserve' },
+    { id: 8, title: 'Micheal&Amazonka', link:'http://24auto.mn',description:'Фейшн' },
+    { id: 9, title: 'UB passport', link:'http://24auto.mn',description:'Лайфстайл' },
+    { id: 10, title: 'Mild cosmetics', link:'http://24auto.mn',description:'гоо сайхан' },
+    { id: 11, title: 'Metro express', link:'http://24auto.mn',description:'гэр ахуй' },
+    { id: 12, title: 'Аянчин', link:'http://24auto.mn',description:'аяны хэрэгсэл хувцас' },
+    { id: 13, title: 'Cose', link:'http://24auto.mn',description:'арьс арчилгаа' },
+    { id: 14, title: 'JoinMe', link:'http://24auto.mn',description:'Аялал' },
+    { id: 15, title: 'Таван нүдэн', link:'http://24auto.mn',description:'үнэт эдлэл' },
+    { id: 16, title: 'Carters', link:'http://24auto.mn',description:'хүүхдийн хувцас' },
+    { id: 17, title: 'Smart store', link:'http://24auto.mn',description:'электроникс' },
+    { id: 18, title: 'Цэцэгт мэндчилгээ', link:'http://24auto.mn',description:'бэлэг дурсгал' },
+    { id: 19, title: 'Wellbee', link:'http://24auto.mn',description:'арчилгаа' },
+    { id: 20, title: 'Ger place', link:'http://24auto.mn',description:'тавилга' },
+    { id: 21, title: 'Baby world', link:'http://24auto.mn',description:'хүүхдийн' },
+    { id: 22, title: 'Gobi khangai', link:'http://24auto.mn',description:'тавилга' },
+    { id: 23, title: 'Home shopping', link:'http://24auto.mn',description:'гэр ахуй' },
+    { id: 24, title: 'Khur', link:'http://24auto.mn',description:'арьсан эдлэл' },
+    { id: 25, title: 'Sarnai', link:'http://24auto.mn',description:'бэлэг дурсгал' },
+    { id: 26, title: 'Premium taste', link:'http://24auto.mn',description:'коньяк, виски, дарс' },
+    { id: 27, title: 'Nature republic', link:'http://24auto.mn',description:'арьс арчилгаа' },
+    { id: 28, title: 'Shoez', link:'http://24auto.mn',description:'гутал' },
+    { id: 29, title: 'Tanpopo', link:'http://24auto.mn',description:'хүүхдийн' },
+    { id: 30, title: 'Zanadu', link:'http://24auto.mn',description:'дарс' },
+    { id: 31, title: 'Inktop', link:'http://24auto.mn',description:'бичиг хэрэг' },
+    { id: 32, title: 'itStore', link:'http://24auto.mn',description:'электроникс' },
+    { id: 33, title: 'eSansar', link:'http://24auto.mn',description:'хүнс' },
+    { id: 34, title: 'Baigal', link:'http://24auto.mn',description:'үнэт эдлэл' },
+    { id: 35, title: 'Amar', link:'http://24auto.mn',description:'даатгал' },
+    { id: 36, title: 'Некст электроникс', link:'http://24auto.mn',description:'цахилгаан бараа' },
+];
+const platform = [
+    { id: 1, title: 'Платформын тухай' },
+    { id: 2, title: 'Шийдэл' },
+    { id: 3, title: 'Онцлог, боломжууд' },
+    { id: 4, title: 'Бизнесийн төрөл' },
+    { id: 5, title: 'Харилцагчид' },
+];
+const about = [
+    { id: 1, title: 'Танилцуулга' },
+    { id: 2, title: 'Үйлчилгээний төрөл' },
+    { id: 3, title: 'Хамтрагч байгууллага' },
+    { id: 4, title: 'Холбоо барих' },
+];
+const contact = [
+    { id: 1, title: 'Утас: 7777-8985' },
+    { id: 2, title: 'Имэйл: info@cody.mn' },
+    { id: 3, title: 'Хаяг: Нью Хоризон оффис, 401 тоот, Улаанбаатар хот' },
+];
+const social = [
+    { id: 1, title: 'instagram', link:'https://www.instagram.com/cody.tech/',icon:Icons.instagram },
+    { id: 2, title: 'facebook', link:'https://www.facebook.com/codymongolia',icon:Icons.facebook },
+]
 function Footer() {
     return (
         <ContainerStyle>
@@ -213,216 +263,85 @@ function Footer() {
                         <h4>Биднийг дагаарай</h4>
                         <form className="">
                             <input name="email" placeholder="Таны имэйл" type="text"
-                               className="email-input form-control" value=""/>
+                                   className="email-input form-control" value=""/>
                             <button type="submit" className="subscribe-button"/>
                         </form>
                     </div>
                 </div>
             </Container>
-                    <div className="footer-menu">
-                        <Container>
-                                <div className="menu-row">
-                                    <div className="menu-column">
-                                        <h3>Коди платформ</h3>
-                                        <ul>
-                                            <li><a href="/">Платформын тухай</a></li>
-                                            <li><a href="/">Шийдэл</a></li>
-                                            <li><a href="/">Онцлог, боломжууд</a></li>
-                                            <li><a href="/">Бизнесийн төрөл</a></li>
-                                            <li><a href="/">Харилцагчид</a></li>
-                                        </ul>
-                                    </div>
-                                    <div className="menu-column">
-                                        <h3>Бидний тухай</h3>
-                                        <ul>
-                                            <li><a href="/">Танилцуулга</a></li>
-                                            <li><a href="/">Үйлчилгээний төрөл</a></li>
-                                            <li><a href="/">Хамтрагч байгууллага</a></li>
-                                            <li><a href="/">Холбоо барих</a></li>
-                                        </ul>
-                                    </div>
-                                    <div className="menu-column">
-                                        <h3>Холбоо барих</h3>
-                                        <ul>
-                                            <li><a href="/">Утас: 7777-8985</a></li>
-                                            <li><a href="/">Имэйл: info@cody.mn</a></li>
-                                            <li><a href="/">Хаяг: Нью Хоризон оффис, 401 тоот, Улаанбаатар хот</a></li>
-                                        </ul>
-                                    </div>
-                                    <div className="icon-column">
-                                        <ul>
-                                            <li>
-                                                <a href="https://www.instagram.com/cody.tech/"
-                                                    rel="noopener noreferrer">
-                                                    <div className="instagram-icon"></div>
-                                                    <span>instagram</span></a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/codymongolia"
-                                                   rel="noopener noreferrer">
-                                                    <img className="facebook-icon" src={facebookIcon}/>
-                                                    <span>facebook</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                        <hr/>
-                        <div className="container-bottom">
-                            <div className="bottom-menu-row">
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://airlink.mn" target="_blank">Airlink</a>
-                                    <p>Нислэгийн билет</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://24auto.mn" target="_blank">24auto</a>
-                                    <p>авто сэлбэг</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://comf.mn" target="_blank">Comf</a>
-                                    <p>хүүхдийн тавилга</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://haus.mn" target="_blank">Haus</a>
-                                    <p>барилгын материал</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://amway.mn" target="_blank">Amway</a>
-                                    <p>гэр ахуй</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://zanadu.mn" target="_blank">Zanadu</a>
-                                    <p>дарс</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://shoppylux.mn" target="_blank">shoppyLux</a>
-                                    <p>the luxury you deserve</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://michealamazonka.mn" target="_blank">Micheal&Amazonka</a>
-                                    <p>Фейшн</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://ubp.mn" target="_blank">UB passport</a>
-                                    <p>Лайфстайл</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://mildcosmetics.mn" target="_blank">Mild cosmetics</a>
-                                    <p>гоо сайхан</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://metroexpress.mn" target="_blank">Metro express</a>
-                                    <p>гэр ахуй</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://aynchin.mn" target="_blank">Аянчин</a>
-                                    <p>аяны хэрэгсэл хувцас</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://cose.mn" target="_blank">Cose</a>
-                                    <p>арьс арчилгаа</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://joinme.mn" target="_blank">JoinMe</a>
-                                    <p>аялал</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="tavannuden.mn" target="_blank">Таван нүдэн</a>
-                                    <p>үнэт эдлэл</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://carters.mn" target="_blank">Carter's</a>
-                                    <p>хүүхдийн хувцас</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://smartstore.mn" target="_blank">Smart store</a>
-                                    <p>электроникс</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://tsetseg.mn" target="_blank">Цэцэгт мэндчилгээ</a>
-                                    <p>бэлэг дурсгал</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://wellbee" target="_blank">Wellbee</a>
-                                    <p>арчилгаа</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://gerplace.mn" target="_blank">Ger place</a>
-                                    <p>тавилга</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://babyworld.mn" target="_blank">Baby world</a>
-                                    <p>хүүхдийн</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://govikhangai.mn" target="_blank">Gobi khangai</a>
-                                    <p>тавилга</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://homeshopping.mn" target="_blank">Home shopping</a>
-                                    <p>гэр ахуй</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://khur.mn" target="_blank">Khur</a>
-                                    <p>арьсан эдлэл</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://sarnai.mn" target="_blank">Sarnai</a>
-                                    <p>бэлэг дурсгал</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://premiumtaste.mn" target="_blank">Premium taste</a>
-                                    <p>коньяк, виски, дарс</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://naturerepublic.mn" target="_blank">Nature republic</a>
-                                    <p>арьс арчилгаа</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://shoez.mn" target="_blank">Shoez</a>
-                                    <p>гутал</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://tanpopo.mn" target="_blank">Tanpopo</a>
-                                    <p>хүүхдийн</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://zanadu.mn" target="_blank">Zanadu</a>
-                                    <p>дарс</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://inktop.mn" target="_blank">Inktop</a>
-                                    <p>бичиг хэрэг</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://itstore.mn" target="_blank">itStore</a>
-                                    <p>электроникс</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://esansar.mn" target="_blank">eSansar</a>
-                                    <p>хүнс</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://baigal.mn" target="_blank">Baigal</a>
-                                    <p>үнэт эдлэл</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://amar.mn" target="_blank">Amar</a>
-                                    <p>даатгал</p>
-                                </div>
-                                <div className="footer-lists">
-                                    <a rel="noopener noreferrer" href="http://next.mn" target="_blank">Нэкст электроникс</a>
-                                    <p>цахилгаан бараа</p>
-                                </div>
-                            </div>
-                            <div className="copyright-section">
-                                <div className="copy-left">
-                                    <p>КОДИ ХХК ©2021 БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН.</p>
-                                </div>
-                                <img className="cody" src="/images/codylogo.svg" alt="cody" />
-                            </div>
+            <div className="footer-menu">
+                <Container>
+                    <div className="menu-row">
+                        <div className="menu-column">
+                            <h3>Коди платформ</h3>
+                            <ul>
+                                {platform.map((item, id) => {
+                                    return (
+                                    <li><a href="/">{item.title}</a></li>
+                                        )
+                                    }
+                                )}
+                            </ul>
                         </div>
-                        </Container>
+                        <div className="menu-column">
+                            <h3>Бидний тухай</h3>
+                            <ul>
+                                {about.map((item, id) => {
+                                        return (
+                                            <li><a href="/">{item.title}</a></li>
+                                        )
+                                    }
+                                )}
+                            </ul>
+                        </div>
+                        <div className="menu-column">
+                            <h3>Холбоо барих</h3>
+                            <ul>
+                                {contact.map((item, id) => {
+                                        return (
+                                            <li><a href="/">{item.title}</a></li>
+                                        )
+                                    }
+                                )}
+                            </ul>
+                        </div>
+                        <div className="icon-column">
+                            <ul>
+                                {social.map((item, id) => {
+                                        return (
+                                            <li>
+                                                <a href={item.link}
+                                                   rel="noopener noreferrer">
+                                                    <img className="icon" src={item.icon}/>
+                                                    <span>{item.title}</span></a>
+                                            </li>
+                                        )
+                                    }
+                                )}
+                            </ul>
+                        </div>
                     </div>
+                    <hr/>
+                    <div className="container-bottom">
+                        <div className="bottom-menu-row">
+                            {links.map((item, i) => {
+                                return (
+                                    <div className="footer-lists">
+                                        <a rel="noopener noreferrer" href={item.link} target="_blank">{item.title}</a>
+                                        <p>{item.description}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <div className="copyright-section">
+                            <div className="copy-left">
+                                <p>КОДИ ХХК ©2021 БҮХ ЭРХ ХУУЛИАР ХАМГААЛАГДСАН.</p>
+                            </div>
+                            <img className="cody" src="/images/codylogo.svg" alt="cody"/>
+                        </div>
+                    </div>
+                </Container>
+            </div>
         </ContainerStyle>
     );
 }

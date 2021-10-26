@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import Logo1 from '../../images/logo-dark.svg';
-import styled from 'styled-components';
 import {Button, Container, Form, Input, Modal, ModalBody, ModalFooter} from "reactstrap";
+import styled from 'styled-components';
+import Logo1 from '../../images/logo-dark.svg';
+
 const ContainerStyle = styled.div`
   .navbar {
     position: fixed;
@@ -111,77 +112,72 @@ const ContainerStyle = styled.div`
 const FormContainer = styled.div`
   background-color: rgb(246, 246, 246);
   border-radius: 20px;
-.contact-form{
-  padding:30px 20px;
+    .contact-form{
+      padding:30px 20px;
       .form-control{
           margin-bottom: 15px;
       }
-  .btn-close{
-    margin-top: -30px;
-    margin-right: -30px;
-  }
+      .btn-close{
+        margin-top: -30px;
+        margin-right: -30px;
+      }
     }
-  .modal-footer{
-    justify-content: center!important;
-    padding:20px;
-  .contact-button{
-    width: 100%;
-    background:linear-gradient(
-            95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
-                  }
-  }
-  .shrink-lane{
-    display: flex;
-  }
-    `;
-const Navbar=(props) => {
-    const {
-        buttonLabel,
-        className
-    } = props;
+    .modal-footer{
+        justify-content: center!important;
+        padding:20px;
+      .contact-button{
+        width: 100%;
+        background:linear-gradient(
+                95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
+      }
+    }
+    .shrink-lane{
+      display: flex;
+    }
+`;
+const Navbar=({ buttonLabel, className }) => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     return (
         <ContainerStyle>
             <div className="navbar">
-                    <Container>
-                        <a className="logo" href="https://cody.mn" ><img className="Logo-image" src={Logo1} alt="Logo" />
-                            <h6 className="slogan"> Таны бизнесийг технологиор хөгжүүлнэ </h6></a>
-                            <div className="menu">
-                                <a href="/#cody"><button type="button" >Коди Платформ</button></a>
-                                <a href="/#solution"><button type="button">Шийдэл</button></a>
-                                <a href="/#features"> <button type="button">Боломжууд</button></a>
-                                <a href="/#hero"> <button type="button">Харилцагч</button></a>
-                                <a href="/about"><Button type="button">Бидний тухай</Button></a>
-
-                                    <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Холбоо барих </button>
-                                <Modal isOpen={modal} toggle={toggle} className={className}>
-                                    <FormContainer>
-                                        <ModalBody>
-                                            <Form className="contact-form">
-                                                <div className="shrink-lane">
-                                                    <Input  placeholder="Овог нэр" type="text"
-                                                        className="contact-surname" value=""/>
-                                                    <button className="btn-close"></button>
-                                                </div>
-                                                    <Input  placeholder="И-мэйл" type="text"
-                                                        className="contact-surname" value=""/>
-                                                    <Input  placeholder="Утас" type="text"
-                                                        className="contact-surname" value=""/>
-                                                    <Input  placeholder="Байгууллагын нэр" type="text"
-                                                        className="contact-surname" value=""/>
-                                            </Form>
-                                        </ModalBody>
-                                            <ModalFooter>
-                                                <Button className="contact-button"  onClick={toggle}>Илгээх</Button>{' '}
-                                            </ModalFooter>
-                                    </FormContainer>
-                                </Modal>
-                            </div>
-                    </Container>
+                <Container>
+                    <a className="logo" href="https://cody.mn" >
+                        <img className="Logo-image" src={Logo1} alt="Logo" />
+                        <h6 className="slogan"> Таны бизнесийг технологиор хөгжүүлнэ </h6>
+                    </a>
+                    <div className="menu">
+                        <a href="/#cody"><button type="button" >Коди Платформ</button></a>
+                        <a href="/#solution"><button type="button">Шийдэл</button></a>
+                        <a href="/#features"> <button type="button">Боломжууд</button></a>
+                        <a href="/#hero"> <button type="button">Харилцагч</button></a>
+                        <a href="/about"><Button type="button">Бидний тухай</Button></a>
+                        <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Холбоо барих </button>
+                    </div>
+                </Container>
             </div>
-                <div className="top-fit"></div>
+            <div className="top-fit" />
+
+            <Modal isOpen={modal} toggle={toggle} className={className}>
+                <FormContainer>
+                    <ModalBody>
+                        <Form className="contact-form">
+                            <div className="shrink-lane">
+                                <Input placeholder="Овог нэр" type="text" className="contact-surname" />
+                                <button className="btn-close" />
+                            </div>
+                            <Input placeholder="И-мэйл" type="text" className="contact-surname" />
+                            <Input placeholder="Утас" type="text" className="contact-surname" />
+                            <Input placeholder="Байгууллагын нэр" type="text" className="contact-surname" />
+                        </Form>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button className="contact-button"  onClick={toggle}>Илгээх</Button>
+                    </ModalFooter>
+                </FormContainer>
+            </Modal>
         </ContainerStyle>
     )
 };
+
 export default Navbar;

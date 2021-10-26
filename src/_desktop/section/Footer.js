@@ -185,7 +185,6 @@ const ContainerStyle = styled.div`
     background-position: center center;
     ::before{
       content: "";
-
       background-repeat: no-repeat;
       width: 23px;
       height: 20px;
@@ -194,6 +193,7 @@ const ContainerStyle = styled.div`
       }
     }
 `;
+
 const links = [
     { id: 1, title: 'Airlink', link:'http://airlink.mn',description:'Нислэгийн билет' },
     { id: 2, title: '24auto', link:'http://24auto.mn',description:'авто сэлбэг' },
@@ -253,7 +253,8 @@ const contact = [
 const social = [
     { id: 1, title: 'instagram', link:'https://www.instagram.com/cody.tech/',icon:Icons.instagram },
     { id: 2, title: 'facebook', link:'https://www.facebook.com/codymongolia',icon:Icons.facebook },
-]
+];
+
 function Footer() {
     return (
         <ContainerStyle>

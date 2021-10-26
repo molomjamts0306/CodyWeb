@@ -5,7 +5,7 @@ import {Container} from 'reactstrap';
 import {Swiper, SwiperSlide} from "swiper/react";
 import Icons from "../../components/Icons";
 import webIcon from "../../components/webIcon";
-const ContainerStyle = styled.div` 
+const ContainerStyle = styled.div`
   .industries-container{
     margin-top: 100px;
     max-width: 100%;

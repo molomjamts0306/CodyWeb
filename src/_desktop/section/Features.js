@@ -222,7 +222,7 @@ const Features = (props) =>{
                         <Modal size="xl" isOpen={modal} toggle={toggle} className={className}>
                             <FormContainer>
                                 <h4 className="Solution-title">Шийдлүүд</h4>
-                                <button className="btn-close" />
+                                <button className="btn-close" onClick={toggle} />
                                     <ModalBody>
                                         <Form className="contact-form">
                                             <FeatureModalContents/>

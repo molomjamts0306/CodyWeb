@@ -8,8 +8,8 @@ const ContainerStyle = styled.div`
     position: fixed;
     width: 100%;
     background-color: rgb(255, 255, 255);
-    padding: 20px 0px;
-    box-shadow: rgb(0 0 0 / 25%) 0px 0px 20px;
+    padding: 20px 0;
+    box-shadow: rgb(0 0 0 / 25%) 0 0 20px;
     z-index: 10;
   }
 
@@ -20,7 +20,7 @@ const ContainerStyle = styled.div`
   .slogan {
     font-size: 12px;
     font-weight: 500;
-    margin: 7px 0px 0px 2px;
+    margin: 7px 0 0 2px;
     color: rgb(30, 32, 48);
   }
 
@@ -41,7 +41,7 @@ const ContainerStyle = styled.div`
       font-size: 15px;
       line-height: 1.2;
       color: rgb(30, 32, 48);
-      margin: 0px 25px;
+      margin: 0 25px;
       transition: all 0.2s ease-in-out 0s;
       :hover {
         color: rgb(131, 38, 226)
@@ -153,6 +153,7 @@ const Navbar=({ buttonLabel, className }) => {
                         <a href="/#hero"> <button type="button">Харилцагч</button></a>
                         <a href="/about"><Button type="button">Бидний тухай</Button></a>
                         <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Холбоо барих </button>
+
                     </div>
                 </Container>
             </div>
@@ -164,7 +165,7 @@ const Navbar=({ buttonLabel, className }) => {
                         <Form className="contact-form">
                             <div className="shrink-lane">
                                 <Input placeholder="Овог нэр" type="text" className="contact-surname" />
-                                <button className="btn-close" />
+                                <button className="btn-close" onClick={toggle} />
                             </div>
                             <Input placeholder="И-мэйл" type="text" className="contact-surname" />
                             <Input placeholder="Утас" type="text" className="contact-surname" />

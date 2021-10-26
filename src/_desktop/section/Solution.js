@@ -223,7 +223,7 @@ function Solution(props) {
                                 <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Дэлгэрэнгүй </button>
                                     <SolutionContainer size="xl" isOpen={modal} toggle={toggle} className={className}>
                                         <div className="solution-container">
-                                            <button className="btn-close" />
+                                            <button className="btn-close" onClick={toggle} />
                                             <h4 className="Solution-title">Шийдлүүд</h4>
                                                 <ModalBody>
                                                     <Form className="contact-form">

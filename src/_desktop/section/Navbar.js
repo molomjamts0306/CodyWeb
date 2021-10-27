@@ -3,7 +3,7 @@ import {Button, Container, Form, Input, Modal, ModalBody, ModalFooter} from "rea
 import {toast, ToastContainer} from "react-toastify";
 import styled from 'styled-components';
 import 'react-toastify/dist/ReactToastify.css';
-import Logo1 from '../../images/logo-dark.svg';
+import Logo1 from '../../images/mainLogo.svg';
 const ContainerStyle = styled.div`
   .navbar {
     position: fixed;

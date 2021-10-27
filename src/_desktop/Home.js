@@ -10,7 +10,7 @@ import Solution from "./section/Solution";
 import Footer from "./section/Footer"
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 const ContainerComp = styled.div`
-  .codyWebContain{
+  .codyWebContainer{
     background-color: white;
     max-width: 100%;!important;
     width: 100%;
@@ -28,7 +28,7 @@ const ContainerComp = styled.div`
 `;
 function Home() {
     return (
-        <div className="codyWebContain">
+        <div className="codyWebContainer">
             <MessengerCustomerChat
                 pageId="111468470600452"
                 appId="955395061711308"

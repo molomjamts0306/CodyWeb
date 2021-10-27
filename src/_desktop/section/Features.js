@@ -149,10 +149,10 @@ const params = {
     slidesPerColumnFill: 'row',
     slidesPerColumn: 2,
     breakpoints: {
-        1024: {slidesPerView: 5, slidesPerGroup: 2, spaceBetween: 40},
-        768: { slidesPerView: 4, slidesPerGroup: 2, spaceBetween: 30 },
-        640: { slidesPerView: 3, slidesPerGroup: 2, spaceBetween: 20 },
-        0: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 10 },
+        1024: {slidesPerView: 5, slidesPerGroup: 4,slidesPerColumn: 2, spaceBetween: 40},
+        768: { slidesPerView: 4, slidesPerGroup: 4,slidesPerColumn: 2, spaceBetween: 30 },
+        640: { slidesPerView: 3, slidesPerGroup: 4,slidesPerColumn: 2, spaceBetween: 20 },
+        0: { slidesPerView: 2, slidesPerGroup: 4,slidesPerColumn: 2, spaceBetween: 10 },
     },
 };
 const features = [

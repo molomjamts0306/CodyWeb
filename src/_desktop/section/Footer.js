@@ -266,8 +266,8 @@ function Footer() {
                     <div className="subscribe">
                         <h4>Биднийг дагаарай</h4>
                         <form className="">
-                            <input name="email" placeholder="Таны имэйл" type="text"
-                                   className="email-input form-control" value=""/>
+                            <input name="" placeholder="Таны имэйл" type="text"
+                                   className="email-input form-control" />
                             <button type="button" onClick={notify} className="subscribe-button"/>
 
                         </form>

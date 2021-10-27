@@ -70,7 +70,7 @@ const FeatureModalContentsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   overflow-y: auto;
-  max-height: 70vh;
+  max-height: 64vh;
   padding: 20px 25px 20px 20px;
   margin: -20px -25px -20px -20px;
   &::-webkit-scrollbar {
@@ -124,7 +124,7 @@ const FormContainer = styled.div`
     text-align: center;
     font-size: 28px;
     width: fit-content;
-    margin: auto;
+    margin: 50px auto auto;
     ::after{
       content: "";
       width: 40%;
@@ -221,7 +221,7 @@ const Features = (props) =>{
                     <Button className="button-click" onClick={toggle}  ><span>{buttonLabel} Дэлгэрэнгүй</span></Button>
                         <Modal size="xl" isOpen={modal} toggle={toggle} className={className}>
                             <FormContainer>
-                                <h4 className="Solution-title">Шийдлүүд</h4>
+                                <h4 className="Solution-title">Системийн боломжууд</h4>
                                 <button className="btn-close" onClick={toggle} />
                                     <ModalBody>
                                         <Form className="contact-form">

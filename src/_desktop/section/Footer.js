@@ -1,4 +1,5 @@
 import React from "react";
+import {toast, ToastContainer} from "react-toastify";
 import styled from 'styled-components';
 import {Container} from 'reactstrap';
 import Icons from  "../../components/Icons";
@@ -256,16 +257,19 @@ const social = [
 ];
 
 function Footer() {
+    const notify = () => toast.success("Амжилттай илгээгдлээ !");
     return (
         <ContainerStyle>
             <Container>
+                <ToastContainer />
                 <div className="footer-container">
                     <div className="subscribe">
                         <h4>Биднийг дагаарай</h4>
                         <form className="">
                             <input name="email" placeholder="Таны имэйл" type="text"
                                    className="email-input form-control" value=""/>
-                            <button type="submit" className="subscribe-button"/>
+                            <button type="button" onClick={notify} className="subscribe-button"/>
+
                         </form>
                     </div>
                 </div>

@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {Button, Container, Form, Input, Modal, ModalBody, ModalFooter} from "reactstrap";
+import {toast, ToastContainer} from "react-toastify";
 import styled from 'styled-components';
+import 'react-toastify/dist/ReactToastify.css';
 import Logo1 from '../../images/logo-dark.svg';
-
 const ContainerStyle = styled.div`
   .navbar {
     position: fixed;
@@ -138,6 +139,10 @@ const FormContainer = styled.div`
 const Navbar=({ buttonLabel, className }) => {
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
+    const notify = () => {
+        toast.success("Амжилттай бүртгэгдлээ !");
+        setModal(!modal);
+    }
     return (
         <ContainerStyle>
             <div className="navbar">
@@ -165,7 +170,7 @@ const Navbar=({ buttonLabel, className }) => {
                         <Form className="contact-form">
                             <div className="shrink-lane">
                                 <Input placeholder="Овог нэр" type="text" className="contact-surname" />
-                                <button className="btn-close" onClick={toggle} />
+                                <button  type="button" className="btn-close" onClick={toggle} />
                             </div>
                             <Input placeholder="И-мэйл" type="text" className="contact-surname" />
                             <Input placeholder="Утас" type="text" className="contact-surname" />
@@ -173,7 +178,8 @@ const Navbar=({ buttonLabel, className }) => {
                         </Form>
                     </ModalBody>
                     <ModalFooter>
-                        <Button className="contact-button"  onClick={toggle}>Илгээх</Button>
+                        <Button className="contact-button"  onClick={notify}>Илгээх</Button>
+                        <ToastContainer />
                     </ModalFooter>
                 </FormContainer>
             </Modal>

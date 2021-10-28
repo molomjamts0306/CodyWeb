@@ -176,14 +176,10 @@ function Industries() {
                         <div className="industry-section">
                             <div className="industry-button">
                                 <ul className="industry-menus">
-                                    {industries.map((item,i) => {
-                                        return (
-                                            <button className={`item-wrapper ${index === i ? 'active' : ''}`} onClick={() => swiper ? swiper.slideTo(i) : false}>
-                                                <img className="indust-icon" src={index === i ? item.iconActive : item.icon} alt=""/>
-                                                <span className="indust-title">{item.title}</span>
-                                            </button>
-                                                )
-                                                    })}
+                                    {industries.map((item,i) =><button className={`item-wrapper ${index === i ? 'active' : ''}`} onClick={() => swiper ? swiper.slideTo(i) : false}>
+                                        <img className="indust-icon" src={index === i ? item.iconActive : item.icon} alt=""/>
+                                        <span className="indust-title">{item.title}</span>
+                                    </button>)}
                                 </ul>
                             </div>
                                 <div className="industry-swiper">

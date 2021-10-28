@@ -69,7 +69,7 @@ const ContainerStyle = styled.div`
         background-size: contain;
         background-position: center 2px;
         background-repeat: no-repeat;
-        margin-left: 0;
+        margin-left: 5px;
         transform: rotate(45deg);
         transition: all 0.1s ease-in-out 0s;
         animation: animateHeart 1.2s infinite;

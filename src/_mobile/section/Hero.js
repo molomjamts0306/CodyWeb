@@ -72,6 +72,11 @@ const ContainerStyle = styled.div`
     background-color: white;
     box-shadow: rgb(236 236 236) 4px 10px 20px;
   }
+  .swiper-container{
+    .swiper-slide{
+      padding: 0!important;
+    }
+  }
   .swiper-slide{
     padding: 10px 50px;
     z-index: 10;
@@ -86,6 +91,7 @@ const ContainerStyle = styled.div`
   .brandLogo {
     width: 100px;
     height: 50px;
+    padding: 10px;
     object-fit: contain;
     background-color: white;
   }
@@ -239,34 +245,34 @@ function Hero() {
                             </Swiper>
                         </div>
                     </div>
-            <div className="hero-logo-wrapper">
-                <Swiper
-                    slidesPerView={12}
-                    autoplay={{ delay: 3000 ,disableOnInteraction: false }}
-                    loop={true}
-                    loopPreventsSlide={false}
-                    spaceBetween={0}
-                    breakpoints={{
-                    "640": {
-                        "slidesPerView": 4,
-                        "spaceBetween": 0
-                    },
-                    "768": {
-                        "slidesPerView": 6,
-                        "spaceBetween": 0
-                    },
-                    "1024": {
-                            "slidesPerView": 8,
-                            "spaceBetween": 0
-                        }}}
-                        >
-                        {images.map((c,idx)=>(
-                            <SwiperSlide className="hero-logo-container" key={idx}>
-                                <SwiperItem className="hero-item" item={c}/>
-                            </SwiperSlide>
-                            ))}
-                </Swiper>
-            </div>
+                    <div className="hero-logo-wrapper">
+                        <Swiper
+                            slidesPerView={5}
+                            autoplay={{ delay: 3000 ,disableOnInteraction: false }}
+                            loop={true}
+                            loopPreventsSlide={false}
+                            spaceBetween={0}
+                            breakpoints={{
+                            "640": {
+                                "slidesPerView": 5,
+                                "spaceBetween": 0
+                            },
+                            "768": {
+                                "slidesPerView": 6,
+                                "spaceBetween": 0
+                            },
+                            "1024": {
+                                    "slidesPerView": 8,
+                                    "spaceBetween": 0
+                                }}}
+                                >
+                                {images.map((c,i)=>(
+                                    <SwiperSlide className="hero-logo-container" key={i}>
+                                        <SwiperItem className="hero-item" item={c}/>
+                                    </SwiperSlide>
+                                    ))}
+                        </Swiper>
+                    </div>
         </ContainerStyle>
     );
 }

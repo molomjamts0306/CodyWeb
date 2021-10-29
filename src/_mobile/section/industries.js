@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import {Container} from 'reactstrap';
 import {Swiper, SwiperSlide} from "swiper/react";
 import Icons from "../../components/Icons";
-import webIcon from "../../components/webIcon";
 const ContainerStyle = styled.div`
   .industries-container{
     margin-top: 100px;
@@ -12,6 +11,14 @@ const ContainerStyle = styled.div`
     max-height: 100%;
     background-color: white;
     position: relative;
+  }
+  .industry-section{
+    display: flex;
+    flex-direction: column;
+  }
+  .industry-menu{
+    display: flex;
+    justify-content: center;
   }
   .industries-title{
     width: fit-content;
@@ -30,7 +37,7 @@ const ContainerStyle = styled.div`
       content: "";
       display: block;
       width: 200px;
-      height: 25px;
+      height: 20px;
       background-image: url("/images/83912c6ad1f546c60160cc940c3e03c4.svg");
       background-repeat: no-repeat;
       background-size: contain;
@@ -42,8 +49,9 @@ const ContainerStyle = styled.div`
   }
   h1{
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1.26;
+    text-align: center;
   }
   .industries-item-detail{
     position: relative;
@@ -54,7 +62,7 @@ const ContainerStyle = styled.div`
     display: flex;
     justify-content: space-between;
   }
-    .industry-button {
+  .industry-button {
       flex: 0 0 250px;
       min-height: 500px;
       margin-right: 40px;
@@ -83,7 +91,7 @@ const ContainerStyle = styled.div`
         box-shadow: rgb(206 207 215) 0px 0px 4px inset;
       }
     }
-    .industry-swiper {
+  .industry-swiper {
       flex: 1;
       max-width: 100%;
       overflow: hidden;
@@ -93,16 +101,20 @@ const ContainerStyle = styled.div`
     object-fit: contain;
     width: 100%;
   }
+  .industry-buttons{
+    display: flex;
+  }
   .tech-list{
     margin-right: 20px;
   }
   .item-wrapper{
-    display: flex;
+    display: none;
     align-items: center;
     border: none;
-    margin: 0 0 10px;
+    margin: 0 0 5px;
     background-color: white;
     &:hover, &.active{
+      display: flex;
       color: rgb(136, 85, 241);
       transition-duration: 0.5s;
     }
@@ -116,13 +128,14 @@ const ContainerStyle = styled.div`
     height: 48px;
     padding: 10px;
     border-radius: 6px;
-    margin-right: 20px;
-    &:hover ,&.active{
-      background-color: #8855F1!important;
-    }
+    margin-right: 0;
     &:focus{
       background-color: #8855F1!important;
     }
+  }
+  .insdustry-images{
+    width: 100%;
+    height: 700px;
   }
 `;
 const industries = [
@@ -145,23 +158,23 @@ const industries = [
     { id: 17, title: 'Гоо, сайхан', icon: Icons.goo, iconActive: Icons.gooActive },
 ];
 const web = [
-    { id: 1,  icon: webIcon.tech },
-    { id: 2,  icon: webIcon.lux },
-    { id: 3,  icon: webIcon.homeshop },
-    { id: 4,  icon: webIcon.duu },
-    { id: 5,  icon: webIcon.brand },
-    { id: 6,  icon: webIcon.wallet },
-    { id: 7,  icon: webIcon.travel },
-    { id: 8,  icon: webIcon.even },
-    { id: 9,  icon: webIcon.ubp },
-    { id: 10,  icon: webIcon.pharm },
-    { id: 11,  icon: webIcon.grocery },
-    { id: 12,  icon: webIcon.coupon },
-    { id: 13,  icon: webIcon.jewelry },
-    { id: 14,  icon: webIcon.nisleg },
-    { id: 15,  icon: webIcon.tavilga },
-    { id: 16,  icon: webIcon.kids },
-    { id: 17,  icon: webIcon.cose },
+    { id: 1,  link: 'https://cdn5.shoppy.mn/img/82105/0x0xwebp/next-mobile.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9'},
+    { id: 2,  link: 'https://cdn5.shoppy.mn/img/82107/0x0xwebp/lux-mobile.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 3,  link: 'https://cdn5.shoppy.mn/img/82113/0x0xwebp/homeshopping.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 4,  link: 'https://cdn5.shoppy.mn/img/82103/0x0xwebp/duu-hugjim-mobile.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 5,  link: 'https://cdn5.shoppy.mn/img/82104/0x0xwebp/converse.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 6,  link: 'https://cdn5.shoppy.mn/img/82116/0x0xwebp/tsahim-hetevch-cody-checkout-mobile.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 7,  link: 'https://cdn5.shoppy.mn/img/82106/0x0xwebp/joinme-mobile.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 8,  link: 'https://cdn5.shoppy.mn/img/82123/0x0xwebp/playtime.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 9,  link: 'https://cdn5.shoppy.mn/img/82111/0x0xwebp/ubpp.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 10,  link: 'https://cdn5.shoppy.mn/img/82114/0x0xwebp/asiapharma.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 11,  link: 'https://cdn5.shoppy.mn/img/82112/0x0xwebp/esansar.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 12,  link: 'https://cdn5.shoppy.mn/img/82115/0x0xwebp/coupon1.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 13,  link: 'https://cdn5.shoppy.mn/img/82108/0x0xwebp/baigali-house.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 14,  link: 'https://cdn5.shoppy.mn/img/82122/0x0xwebp/airlink.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 15,  link: 'https://cdn5.shoppy.mn/img/82128/0x0xwebp/gerplace.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 16,  link: 'https://cdn5.shoppy.mn/img/82110/0x0xwebp/carters.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
+    { id: 17,  link: 'https://cdn5.shoppy.mn/img/82121/0x0xwebp/cose.jpg?h=2935d0aea8cdff34d20f429fcef48744910ed6a9' },
 ];
 function Industries() {
     const [index, setIndex] = React.useState(0);
@@ -174,29 +187,31 @@ function Industries() {
                             <h1>Кодиг ашиглан Та юу бүтээж чадах вэ?</h1>
                         </div>
                         <div className="industry-section">
-                            <div className="industry-button">
-                                <ul className="industry-menus">
-                                    {industries.map((item,i) =><button className={`item-wrapper ${index === i ? 'active' : ''}`} onClick={() => swiper ? swiper.slideTo(i) : false}>
-                                        <img className="indust-icon" src={index === i ? item.iconActive : item.icon} alt=""/>
-                                        <span className="indust-title">{item.title}</span>
-                                    </button>)}
-                                </ul>
-                            </div>
-                                <div className="industry-swiper">
-                                    <Swiper
-                                        slidesPerView={1}
-                                        spaceBetween={100}
-                                        navigation={true}
-                                        onSlideChange={(e) => setIndex(e.realIndex)}
-                                        onSwiper={setSwiper}
-                                        >
-                                        {web.map((c, idx)=>(
-                                            <SwiperSlide className="industries-item-detail" key={idx}>
-                                                    <img src={c.icon} alt="industry-slide"/>
-                                            </SwiperSlide>
-                                        ))}
-                                    </Swiper>
+                            <div className="industry-menu">
+                                <div className="industry-buttons">
+                                    {industries.map((item,i) =>
+                                            <button className={`item-wrapper ${index === i ? 'active' : ''}`} onClick={() => swiper ? swiper.slideTo(i) : false}>
+                                                <img className="indust-icon" src={index === i ? item.iconActive : item.icon} alt=""/>
+                                                <span className="indust-title">{item.title}</span>
+                                            </button>
+                                    )}
                                 </div>
+                            </div>
+                            <div className="industry-mobileWeb">
+                                <Swiper
+                                    slidesPerView={1}
+                                    spaceBetween={100}
+                                    navigation={true}
+                                    onSlideChange={(e) => setIndex(e.realIndex)}
+                                    onSwiper={setSwiper}
+                                    >
+                                    {web.map((c, idx)=>(
+                                        <SwiperSlide className="industries-item-detail" key={idx}>
+                                            <img className="insdustry-images" src={c.link} alt="industry-slide"/>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                            </div>
                         </div>
                     </div>
                 </ContainerStyle>

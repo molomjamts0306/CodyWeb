@@ -18,15 +18,18 @@ const ContainerStyle = styled.div`
     width: 100px;
   }
   .top-fit {
-    height: 88px;
+    height: 65px;
   }
   .menu-bars {
+    margin: 0 10px;
     background: none;
     width: 25px;
     height: 25px;
     cursor: pointer;
+    :hover{
+      color: blueviolet;
+    }
   }
-
   .nav-menu {
     background-color: #8855F1;
     height: 100%;
@@ -39,18 +42,16 @@ const ContainerStyle = styled.div`
   }
   .nav-menu-items{
     list-style-type: none;
+    padding: 0 10px;
   }
   .nav-menu.active {
     width: 80%;
-    right: 0%;
-    
+    right: 0;
   }
-
   .nav-text {
     display: flex;
     list-style: none;
   }
-
   .nav-text a {
     text-decoration: none;
     color: #f5f5f5;
@@ -64,7 +65,6 @@ const ContainerStyle = styled.div`
   .nav-menu-items {
     width: 100%;
   }
-
   .navbar-toggle {
     text-align: right;
     padding: 20px 0;
@@ -111,31 +111,28 @@ const Navbar=({ buttonLabel, className }) => {
         toast.success("Амжилттай бүртгэгдлээ !");
         setModal(!modal);
     }
-
     return (
         <ContainerStyle>
             <div className="navbar">
-
                     <a className="logo" href="https://cody.mn" >
                         <img className="Logo-image" src={Logo1} alt="Logo" />
                     </a>
-
                     <FaIcons.AiOutlineMenu onClick={showSidebar} className="menu-bars" />
-                        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                            <Container>
+                    <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                        <Container>
                             <ul className='nav-menu-items' >
                                 <div className='navbar-toggle' >
                                     <div><FaIcons.AiOutlineClose className="sidebarClose" onClick={showSidebar}/></div>
                                 </div>
-                                {sidebarMenu.map((item, index) =>{
-                                    return(
-                                        <li key={index} className="nav-text">
-                                            <a href={item.link}>
-                                            <span>{item.title}</span>
-                                            </a>
-                                        </li>
-                                    )
-                                })}
+                                    {sidebarMenu.map((item, index) =>{
+                                        return(
+                                            <li key={index} className="nav-text">
+                                                <a href={item.link}>
+                                                <span>{item.title}</span>
+                                                </a>
+                                            </li>
+                                        )
+                                    })}
                                 <Form className="contact-form">
                                     <div className="shrink-lane">
                                         <Input placeholder="Овог нэр" type="text" className="contact-text" />
@@ -147,8 +144,8 @@ const Navbar=({ buttonLabel, className }) => {
                                 </Form>
                                 <p className="copyright">©2021 Cody Inc. All rights reserved. </p>
                             </ul>
-                            </Container>
-                        </nav>
+                        </Container>
+                    </nav>
             </div>
             <div className="top-fit" />
         </ContainerStyle>

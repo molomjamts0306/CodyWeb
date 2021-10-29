@@ -24,7 +24,7 @@ const ContainerStyle = styled.div`
       content: "";
       display: block;
       width: 200px;
-      height: 25px;
+      height: 20px;
       background-image: url("/images/928fc5cf560d99cd67d70b32d778f396.svg");
       background-repeat: no-repeat;
       background-size: contain;
@@ -35,21 +35,21 @@ const ContainerStyle = styled.div`
     }
   }
   .solutions{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 0px 7%;
     margin-top: 6%;
     margin-bottom: 7%;
   }
   h1{
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 1.26;
   }
   h5{
-    margin-bottom: 20px;
-    font-size: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
     color: rgb(136, 85, 241);
     font-family: "Averta CY", sans-serif;
     line-height: 1.26;
@@ -58,7 +58,7 @@ const ContainerStyle = styled.div`
   }
   p{
     font-family: Bull,serif;
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(137, 137, 137);
     font-weight: 300;
   }
@@ -70,12 +70,12 @@ const ContainerStyle = styled.div`
     justify-content: center;
   }
   .btn-contact{
-    padding: 14px 30px;
+    padding: 10px 30px;
     border-radius: 8px;
     background: linear-gradient(95.41deg, #8326E2 34.67%, #5206E1 148.46%);
     color: white;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     border: none;
   }
   .featurestopbackground{
@@ -94,12 +94,12 @@ const SolutionContainer = styled(Modal)`
     border: none;
     flex-direction: column;
     .contact-form{
-      display: grid;
+      display: flex;
       padding: 0;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 49px 80px;
+      flex-direction: column;
+      gap: 20px 80px;
       overflow-y: auto;
-      max-height: 500px;
+      max-height: 450px;
       margin-right: -23px;
       padding-right: 23px;
       ::-webkit-scrollbar{
@@ -129,7 +129,6 @@ const SolutionContainer = styled(Modal)`
       color: rgb(30, 32, 48);
       font-weight: bold;
       text-align: center;
-      font-size: 28px;
       width: fit-content;
       margin: auto;
       ::after{
@@ -146,12 +145,12 @@ const SolutionContainer = styled(Modal)`
       h5{
         color: rgb(136, 85, 241);
         margin-bottom: 20px;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: 600;
         text-align: left;
       }
       p{
-        font-size: 18px;
+        font-size: 12px;
         color: rgb(137, 137, 137);
         font-weight: 400;
         margin-bottom: 0px;
@@ -167,7 +166,7 @@ const SolutionContainer = styled(Modal)`
               95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
     }
   }
-.btn-close{
+  .btn-close{
   float: right;
 }
 `;
@@ -194,7 +193,7 @@ function Solution(props) {
         {title:'Social Ecommerce', description:"Томоохон сошиал суваг дээр худалдааны орон зайгаа бий болгох боломжууд"},
     ]
     return  (
-        <ContainerStyle >
+        <ContainerStyle>
             <Container>
                 <div id="solution"  className="solution-container">
                     <div>

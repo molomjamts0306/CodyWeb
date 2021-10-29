@@ -25,22 +25,32 @@ const ContainerStyle = styled.div`
   h3{
     color: #1E2030;
     font-weight: bold;
-    font-size:30px;
+    font-size:20px;
     line-height: 30px;
     margin-bottom: 30px;
+    text-align: center;
   }
   p{
     color:#8E98AE;
-    font-size:22px;
-    line-height: 36px;
+    font-size:15px;
+    line-height: 15px;
+    text-align: center;
   }
   .cody-section{
     background: white;
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
   }
   .d-flex{
     padding: 50px;
+  }
+  .picture{
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 `;
 

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {Button, Container, Form, Input, Modal, ModalBody, ModalFooter} from "reactstrap";
-import {toast, ToastContainer} from "react-toastify";
+import {Button, Container, Form, Input} from "reactstrap";
+import {toast} from "react-toastify";
 import styled from 'styled-components';
 import 'react-toastify/dist/ReactToastify.css';
 import Logo1 from '../../images/mainLogo.svg';
+import * as FaIcons from 'react-icons/ai';
 const ContainerStyle = styled.div`
   .navbar {
     position: fixed;
@@ -13,176 +14,143 @@ const ContainerStyle = styled.div`
     box-shadow: rgb(0 0 0 / 25%) 0 0 20px;
     z-index: 10;
   }
-
   .Logo-image {
-    width: 150px;
-  }
-
-  .slogan {
-    font-size: 12px;
-    font-weight: 500;
-    margin: 7px 0 0 2px;
-    color: rgb(30, 32, 48);
-  }
-
-  .menu {
-    display: flex;
-    justify-content: flex-end;
-    flex: 1;
-    a {
-      display: flex;
-      text-decoration: none;
-    }
-    button {
-      border: none;
-      background-color: white;
-      font-family: "Averta CY", Roboto, sans-serif;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 1.2;
-      color: rgb(30, 32, 48);
-      margin: 0 25px;
-      transition: all 0.2s ease-in-out 0s;
-      :hover {
-        color: rgb(131, 38, 226)
-      }
-    } 
-    .btn-contact {
-      background: linear-gradient(95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
-      border-radius: 8px;
-      color: rgb(255, 255, 255);
-      transition: all 0.1s ease-in-out;
-      font-size: 14px;
-      padding: 12px 25px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 0;
-      :after {
-        width: 0;
-        height: 20px;
-        content: "";
-        display: inline-block;
-        background-image: url(/images/button-heart.svg);
-        background-size: contain;
-        background-position: center 2px;
-        background-repeat: no-repeat;
-        margin-left: 5px;
-        transform: rotate(45deg);
-        transition: all 0.1s ease-in-out 0s;
-        animation: animateHeart 1.2s infinite;
-      }
-      :hover {
-        color: white;
-        :after{
-          width: 20px;
-        }
-      }
-    }
+    width: 100px;
   }
   .top-fit {
     height: 88px;
   }
-  .logo {
+  .menu-bars {
+    background: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    background-color: #8855F1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 450ms;
+  }
+  .nav-menu-items{
+    list-style-type: none;
+  }
+  .nav-menu.active {
+    width: 80%;
+    right: 0%;
+    
+  }
+
+  .nav-text {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-text a {
     text-decoration: none;
+    color: #f5f5f5;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 10px 0;
+    border-radius: 4px;
   }
-  
-  @keyframes animateHeart {
-    0% {
-      transform: rotate(0deg) scale(0.8);
-    }
-    5% {
-      transform: rotate(0deg) scale(0.9);
-    }
-    10% {
-      transform: rotate(0deg) scale(0.8);
-    }
-    15% {
-      transform: rotate(0deg) scale(1);
-    }
-    50% {
-      transform: rotate(0deg) scale(0.8);
-    }
-    100% {
-      transform: rotate(0deg) scale(0.8);
-    }
+  .nav-menu-items {
+    width: 100%;
+  }
+
+  .navbar-toggle {
+    text-align: right;
+    padding: 20px 0;
+    list-style-type: none;
+  }
+  .sidebarClose{
+    cursor: pointer;
+    color: white;
+    width: 25px;
+    height: 25px;
+  }
+  .contact-text{
+    border-radius: 16px;
+    font-size: 13px;
+    width: 100%;
+    margin:  20px 0;
+    color: #495057;
+  }
+  .contact-button{
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(2, 212, 228);
+    background: rgb(2, 212, 228);
+  }
+  .copyright{
+    margin: 20px 0 ;
+    color: #ffffff;
+    font-size: 11px;
+    text-align: center;
   }
 `;
-const FormContainer = styled.div`
-  background-color: rgb(246, 246, 246);
-  border-radius: 20px;
-    .contact-form{
-      padding:30px 20px;
-      .form-control{
-          margin-bottom: 15px;
-      }
-      .btn-close{
-        margin-top: -30px;
-        margin-right: -30px;
-      }
-    }
-    .modal-footer{
-        justify-content: center!important;
-        padding:20px;
-      .contact-button{
-        width: 100%;
-        background:linear-gradient(
-                95.41deg, rgb(131, 38, 226) 34.67%, rgb(82, 6, 225) 148.46%);
-      }
-    }
-    .shrink-lane{
-      display: flex;
-    }
-`;
+const sidebarMenu =[
+    {id:'1',title:'Коди Платформ',link:'/#cody'},
+    {id:'2',title:'Шийдэл',link:'/#solution'},
+    {id:'3',title:'Боломжууд',link:'/#features'},
+    {id:'4',title:'Харилцагч',link:'/#hero'},
+    {id:'5',title:'Бидний тухай',link:'/#about'},
+]
 const Navbar=({ buttonLabel, className }) => {
     const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
+    const [sidebar, setSidebar] = useState(false);
+    const showSidebar = () => setSidebar(!sidebar);
     const notify = () => {
         toast.success("Амжилттай бүртгэгдлээ !");
         setModal(!modal);
     }
+
     return (
         <ContainerStyle>
             <div className="navbar">
-                <Container>
+
                     <a className="logo" href="https://cody.mn" >
                         <img className="Logo-image" src={Logo1} alt="Logo" />
-                        <h6 className="slogan"> Таны бизнесийг технологиор хөгжүүлнэ </h6>
                     </a>
-                    <div className="menu">
-                        <a href="/#cody"><button type="button" >Коди Платформ</button></a>
-                        <a href="/#solution"><button type="button">Шийдэл</button></a>
-                        <a href="/#features"> <button type="button">Боломжууд</button></a>
-                        <a href="/#hero"> <button type="button">Харилцагч</button></a>
-                        <a href="/about"><Button type="button">Бидний тухай</Button></a>
-                        <button type="button" className="btn-contact" onClick={toggle} > {buttonLabel} Холбоо барих </button>
 
-                    </div>
-                </Container>
+                    <FaIcons.AiOutlineMenu onClick={showSidebar} className="menu-bars" />
+                        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                            <Container>
+                            <ul className='nav-menu-items' >
+                                <div className='navbar-toggle' >
+                                    <div><FaIcons.AiOutlineClose className="sidebarClose" onClick={showSidebar}/></div>
+                                </div>
+                                {sidebarMenu.map((item, index) =>{
+                                    return(
+                                        <li key={index} className="nav-text">
+                                            <a href={item.link}>
+                                            <span>{item.title}</span>
+                                            </a>
+                                        </li>
+                                    )
+                                })}
+                                <Form className="contact-form">
+                                    <div className="shrink-lane">
+                                        <Input placeholder="Овог нэр" type="text" className="contact-text" />
+                                        <Input placeholder="И-мэйл" type="text" className="contact-text" />
+                                        <Input placeholder="Утас" type="text" className="contact-text" />
+                                        <Input placeholder="Байгууллагын нэр" type="text" className="contact-text" />
+                                        <Button className="contact-button" onClick={notify}><span>Хамтрах</span></Button>
+                                    </div>
+                                </Form>
+                                <p className="copyright">©2021 Cody Inc. All rights reserved. </p>
+                            </ul>
+                            </Container>
+                        </nav>
             </div>
             <div className="top-fit" />
-
-            <Modal isOpen={modal} toggle={toggle} className={className}>
-                <FormContainer>
-                    <ModalBody>
-                        <Form className="contact-form">
-                            <div className="shrink-lane">
-                                <Input placeholder="Овог нэр" type="text" className="contact-surname" />
-                                <button  type="button" className="btn-close" onClick={toggle} />
-                            </div>
-                            <Input placeholder="И-мэйл" type="text" className="contact-surname" />
-                            <Input placeholder="Утас" type="text" className="contact-surname" />
-                            <Input placeholder="Байгууллагын нэр" type="text" className="contact-surname" />
-                        </Form>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button className="contact-button"  onClick={notify}>Илгээх</Button>
-                        <ToastContainer />
-                    </ModalFooter>
-                </FormContainer>
-            </Modal>
         </ContainerStyle>
     )
 };
